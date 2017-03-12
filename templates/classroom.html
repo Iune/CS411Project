@@ -9,11 +9,15 @@
 			<div class="panel-title">Overview</div>
 		</div>
 	    <div class="panel-body">
-		    <div class="col-lg-6">
-			    <p>Building <br> Room # <br> Rating</p>
+		    <div class="col-lg-4">
+				<ul class="list-group">
+				<li class="list-group-item"><b>Building:</b> <span class="pull-right">{{classroom['buildingName']}}</li>
+				<li class="list-group-item"><b>Room Number:</b> <span class="pull-right">{{classroom['roomNumber']}}</li>
+				<li class="list-group-item"><b>Avg. Rating</b> <span class="pull-right">{{classroom['averageRating']}}</li>
+			</ul>			    
 		    </div>
 		    <div class="col-lg-6">
-			    <p>List of Tags</p>
+			    <p>{{classroom['tags']}}</p>
 		    </div>
 	    </div>
 	</div>

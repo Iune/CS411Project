@@ -16,10 +16,10 @@
 						<div class="input-group">
 							<label>Building Name</label>
 							<select class="form-control" id="buildingName">
-								<option>Building Name</option>
-								<option>Building Name</option>
-								<option>Building Name</option>
-								<option>Building Name</option>
+								<option class="selection" value="">Select Building</option>
+								{% for building in buildings %}
+								<option class="{{building['className']}}" value="{{building['name']}}">{{building['name']}}</option>
+								{% endfor %}
 							</select>
 						</div>
 					</div>
@@ -27,10 +27,10 @@
 						<div class="input-group">
 							<label>Classroom</label>
 							<select class="form-control" id="classroomName">
-								<option>Classroom Name</option>
-								<option>Classroom Name</option>
-								<option>Classroom Name</option>
-								<option>Classroom Name</option>
+								<option class="selection" value="">Select Classroom</option>
+								{% for classroom in classrooms %}
+								<option class="{{classroom['buildingClassName']}}" value="{{classroom['roomNumber']}}">{{classroom['roomNumber']}} – {{classroom['buildingName']}}</option>
+								{% endfor %}
 							</select>
 						</div>
 					</div>
@@ -55,17 +55,17 @@
 					<div class="input-group">
 				  		<span class="input-group-addon">Within</span>
 						<select class="form-control" id="travelMethod">
-							<option>Walking Distance</option>
-							<option>Biking Distance</option>
+							<option value="walking">Walking Distance</option>
+							<option value="biking">Biking Distance</option>
 						</select>
 					</div>
 					<div class="input-group">
 				  		<span class="input-group-addon">Of</span>
 						<select class="form-control" id="distanceOf">
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
+							<option value="">Select Building</option>
+							{% for building in buildings %}
+							<option value="{{building['name']}}">{{building['name']}}</option>
+							{% endfor %}
 						</select>
 					</div>
 					<div class="input-group">
@@ -103,19 +103,19 @@
 					<div class="input-group">
 				  		<span class="input-group-addon">Building 1</span>
 						<select class="form-control" id="building1">
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
+							<option value="">Select Building</option>
+							{% for building in buildings %}
+							<option value="{{building['name']}}">{{building['name']}}</option>
+							{% endfor %}
 						</select>
 					</div>
 					<div class="input-group">
 				  		<span class="input-group-addon">Building 2</span>
 						<select class="form-control" id="building2">
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
-							<option>Building Name</option>
+							<option value="">Select Building</option>
+							{% for building in buildings %}
+							<option value="{{building['name']}}">{{building['name']}}</option>
+							{% endfor %}
 						</select>
 					</div>
 					<div class="input-group">
@@ -133,6 +133,18 @@
 	</div>
 </div>
 <script type="text/javascript">
+$(document).ready(function() {
+	var allOptions = $('#classroomName option')
+	$('#buildingName').change(function() {
+		$('#classroomName option').remove()
+		var classN = $('#buildingName option:selected').prop('class');
+		var opts = allOptions.filter('.' + classN);
+		$.each(opts, function(i, j) {
+			$(j).appendTo('#classroomName');
+		});
+	});
+});
+
 $(function() {
    $('button.btn-default').click(function() {
        $(this).toggleClass('btn-primary');
