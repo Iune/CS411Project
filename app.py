@@ -1,6 +1,8 @@
 from flask import Flask
-from flask import jsonify, render_template, abort, request
+from flask import jsonify, render_template, abort, request, redirect, url_for
 from flask_mysqldb import MySQL
+import time
+import datetime
 
 app = Flask(__name__)
 # MySQL Configurations
@@ -8,6 +10,10 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'c$411Pr0J'
 app.config['MYSQL_DB'] = 'RateMyClassroomData'
 app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'testuser'
+# app.config['MYSQL_PASSWORD'] = 'test123'
+# app.config['MYSQL_DB'] = 'TESTDB'
+# app.config['MYSQL_HOST'] = 'localhost'
 mysql = MySQL(app)
 
 @app.route('/')
@@ -35,9 +41,47 @@ def index():
         })
     return render_template('index.html', title="Home", buildings=buildings_data, classrooms=classrooms_data)
 
-@app.route('/room/<building>/<classname>')
-def view_classroom(building, classname):
+@app.route('/search', methods=['POST'])
+def search():
+    building_name = request.form['buildingNameInput']
+    classroom_name = request.form['classroomNameInput']
+    return redirect(url_for('room', building=building_name, classname=classroom_name))
+
+@app.route('/add_review', methods=['POST'])
+def add_review():
+    building_name = request.form['buildingNameInput']
+    room_number = request.form['roomNumberInput']
+    user_name = request.form['userNameText']
+    rating = request.form['ratingSelectInput']
+    review_text = request.form['reviewText']
+
+    ts = time.time()
+    timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
+    
+    cursor = mysql.connection.cursor()  
+    cursor.execute("INSERT INTO Review (Rating, DateTime, Text, UserName, ClassroomNumber, BldgName) VALUES (%s, %s, %s, %s, %s, %s)", (rating, timestamp, review_text, user_name, room_number, building_name))  
+    mysql.connection.commit()
+    return redirect(url_for('room', building=building_name, classname=room_number))
+
+@app.route('/handle_review', methods=['POST'])
+def handle_review():
     cursor = mysql.connection.cursor()
+    if request.form['submit'] == 'edit':
+        return 'Edit'
+    elif request.form['submit'] == 'delete':
+        user_name = request.form['reviewUserName']
+        building = request.form['reviewBuilding']
+        classroom = request.form['reviewClassroom']
+        cursor.execute("DELETE FROM Review WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (user_name, building, classroom))
+        mysql.connection.commit()
+        return redirect(url_for("room", building=building, classname=classroom))
+    else:
+        return 'Do nothing'
+
+@app.route('/room/<building>/<classname>')
+def room(building, classname):
+    cursor = mysql.connection.cursor()
+    # Load classroom data
     cursor.execute("SELECT * FROM Classroom WHERE BldgName = %s AND RoomNumber = %s", (building, classname)) 
     classrooms = cursor.fetchall()
     classroom = classrooms[0]
@@ -48,10 +92,27 @@ def view_classroom(building, classname):
         'averageRating': classroom[3],
         'tags' : []
     }
-    for classroom in classrooms:
-        classroom_data['tags'].append(classroom[4])
+    # for classroom in classrooms:
+    #     if(classroom[4])
+    #         classroom_data['tags'].append(classroom[4])
+    # Load reviews
+    cursor.execute("SELECT * FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, classname)) 
+    reviews = cursor.fetchall()
+    reviews_data = []
+    for review in reviews:
+        tags = []
+        cursor.execute("SELECT * FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
+        tags_list = cursor.fetchall()
+        reviews_data.append({
+            'userName': review[3],
+            'text': review[2],
+            'rating': review[0],
+            'ratingStars': "{}{}".format(review[0]*"★", (5-review[0])*"☆"),
+            'tags': tags_list,
+            'time': review[1]
+        })
 
-    return render_template('classroom.html', title="Classroom", classroom=classroom_data)
+    return render_template('classroom.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews_data)
 
 
 if __name__ == "__main__":
