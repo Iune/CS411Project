@@ -3,7 +3,7 @@
 		<title>Main Page</title>
 		<link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
 	    <link href="{{ url_for('static',filename='css/bootstrap-theme.min.css') }}" rel="stylesheet" media="screen">
-	    <link href="{{ url_for('static',filename='css/bootstrap-sortable.css') }}" rel="stylesheet" media="screen">
+	    <!-- <link href="{{ url_for('static',filename='css/bootstrap-sortable.css') }}" rel="stylesheet" media="screen"> -->
 	    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" media="screen">
 	</head>
 	<body style="font-size: 11px;">
@@ -20,13 +20,13 @@
 			    </div>
 		  	</div>
 		</nav>
+		<!-- Required Javascript Files -->
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
 		<div class="container">
 			<div class="container">
 				{% block content %}{% endblock %}
 			</div>
 		</div>
-		<!-- Required Javascript Files -->
-	    <script src="http://code.jquery.com/jquery-latest.js"></script>
-		<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
 	</body>
 </html>
