@@ -1,0 +1,695 @@
+212 David Kinley Hall
+255 Armory
+222 David Kinley Hall
+206 David Kinley Hall
+137 Armory
+103 1207 W Oregon
+329 Armory
+370 Armory
+166 Bevier Hall
+106B3 Engineering Hall
+323 Education Building
+215B David Kinley Hall
+203 Transportation Building
+1126 Foreign Languages Building
+103 Bevier Hall
+204 Agricultural Engr Sciences Bld
+242 Agricultural Engr Sciences Bld
+248 Agricultural Engr Sciences Bld
+N120 Turner Hall
+220 Agricultural Engr Sciences Bld
+111 David Kinley Hall
+2007 Business Instructional Fac
+2063 Business Instructional Fac
+3003 Business Instructional Fac
+1025 Business Instructional Fac
+3057 Business Instructional Fac
+2005 Business Instructional Fac
+243 Wohlers Hall
+3001 Business Instructional Fac
+2057 Business Instructional Fac
+3041 Business Instructional Fac
+3009 Business Instructional Fac
+3063 Business Instructional Fac
+2001 Business Instructional Fac
+1049 Business Instructional Fac
+ARR Business Instructional Fac
+2043 Business Instructional Fac
+23 ACES Lib, Info & Alum Ctr
+103 Mumford Hall
+2 Education Building
+219 David Kinley Hall
+426 Mumford Hall
+313 Mumford Hall
+22 ACES Lib, Info & Alum Ctr
+W109 Turner Hall
+29 ACES Lib, Info & Alum Ctr
+30 ACES Lib, Info & Alum Ctr
+132 Bevier Hall
+150 Animal Sciences Laboratory
+112 Speech & Hearing Science Bldg
+259 English Building
+316N Mumford Hall
+33 Education Building
+316S Mumford Hall
+209 Huff Hall
+108 English Building
+112 Gregory Hall
+7 Weston Hall
+335 Mechanical Engineering Bldg
+120 Architecture Building
+328 Armory
+108 Bevier Hall
+123 Gregory Hall
+1002 Lincoln Hall
+213 Gregory Hall
+147 Armory
+333 Armory
+331 Armory
+384 Armory
+0216 Siebel Center for Comp Sci
+1022 Lincoln Hall
+313 Gregory Hall
+215 Gregory Hall
+119 Materials Science & Eng Bld
+218 Ceramics Building
+103 Talbot Laboratory
+153 Mechanical Engineering Bldg
+124 Burrill Hall
+32 Psychology Building
+403B2 Engineering Hall
+1310 Digital Computer Laboratory
+253 Mechanical Engineering Bldg
+101 Transportation Building
+103 Transportation Building
+410B1 Engineering Hall
+214 Ceramics Building
+410C1 Engineering Hall
+218 Mechanical Engineering Bldg
+344 Mechanical Engineering Bldg
+206 Transportation Building
+100 Armory
+325 Armory
+162 Education Building
+241 Armory
+130 Wohlers Hall
+145 Armory
+0304 Music Building
+23 Illini Hall
+140 Burrill Hall
+1134 Foreign Languages Building
+136 Davenport Hall
+386 Armory
+1022 Foreign Languages Building
+331 Gregory Hall
+336 Gregory Hall
+G30 Foreign Languages Building
+144 Bevier Hall
+131 English Building
+318 Gregory Hall
+G13 Foreign Languages Building
+150 English Building
+215 Davenport Hall
+312 Art and Design Building
+G24 Foreign Languages Building
+122 Bevier Hall
+9 Gregory Hall
+1051 Lincoln Hall
+404 Animal Sciences Laboratory
+131 Animal Sciences Laboratory
+393 Bevier Hall
+1002 Huff Hall
+204 Transportation Building
+107 Animal Sciences Laboratory
+1103 Siebel Center for Comp Sci
+144 Armory
+ARENA Stock Pavilion
+67 Animal Sciences Laboratory
+AUD Foellinger Auditorium
+1066 Lincoln Hall
+1092 Lincoln Hall
+120 Meat Science Laboratory
+141 Wohlers Hall
+W115 Turner Hall
+292 Animal Sciences Laboratory
+165 Noyes Laboratory
+1065 Lincoln Hall
+THEAT Lincoln Hall
+116 Davenport Hall
+114 Smith Memorial Hall
+217 Noyes Laboratory
+329 Davenport Hall
+66 Library
+116 Roger Adams Laboratory
+212 1205 W Oregon
+209A Davenport Hall
+ARR Institute for Genomic Biology
+319 Gregory Hall
+307 David Kinley Hall
+214 Davenport Hall
+1032 Foreign Languages Building
+111 Gregory Hall
+23 Psychology Building
+1038 Foreign Languages Building
+169 Davenport Hall
+429 Armory
+113 Smith Memorial Hall
+109A Davenport Hall
+0360 Music Building
+18 Temple Hoyne Buell Hall
+G18 Foreign Languages Building
+G3 Foreign Languages Building
+G27 Foreign Languages Building
+G8A Foreign Languages Building
+1112 Foreign Languages Building
+134 Temple Hoyne Buell Hall
+149 National Soybean Res Ctr
+ARR Architecture Annex
+1028 Lincoln Hall
+102A Architecture Building
+328 Bevier Hall
+114 Transportation Building
+102B Architecture Building
+211 Temple Hoyne Buell Hall
+325 Temple Hoyne Buell Hall
+17 Temple Hoyne Buell Hall
+301 Architecture Building
+305 Temple Hoyne Buell Hall
+205 Temple Hoyne Buell Hall
+20 Architecture Building
+219 Art and Design Building
+330 Art and Design Building
+40 Art and Design Building
+410 Flagg Hall
+327 Flagg Hall
+40 Allen Residence Hall
+64 Allen Residence Hall
+63 Allen Residence Hall
+306 Flagg Hall
+331 Art and Design Building
+106 Art and Design Building
+229 Art and Design Building
+232 Art and Design Building
+340 Art and Design Building
+316 Art and Design Building
+224 Art and Design Building
+404 Flagg Hall
+25 Art and Design Building
+421 Flagg Hall
+216 Art and Design Building
+315 Art and Design Building
+128 Flagg Hall
+129 Flagg Hall
+320 Flagg Hall
+319 Art and Design Building
+131 Flagg Hall
+302 Architecture Building
+89 Allen Residence Hall
+221 Architecture Annex
+209 Art and Design Building
+50 Flagg Hall
+225 Art and Design Building
+ARR 2110 S. Griffith Dr., Bldg 4
+7 Noble Hall
+N107 Turner Hall
+106 David Kinley Hall
+114 David Kinley Hall
+113 Davenport Hall
+134 Astronomy Building
+136 Loomis Laboratory
+1000 Lincoln Hall
+109 Atmospheric Sciences Bldg
+305 Materials Science & Eng Bld
+100 Atmospheric Sciences Bldg
+2310 Newmark Civil Engineering Bldg
+2011 Business Instructional Fac
+152 Wohlers Hall
+432 Armory
+166 Wohlers Hall
+2041 Business Instructional Fac
+3007 Business Instructional Fac
+338 Davenport Hall
+226 Wohlers Hall
+241 Wohlers Hall
+ARR Inst Labor &  Industrial Rel
+3039 Business Instructional Fac
+240 Wohlers Hall
+1040 Foreign Languages Building
+143 Altgeld Hall
+217 Gregory Hall
+218 Noyes Laboratory
+1024 Chemistry Annex
+ARR Digital Computer Laboratory
+112 Transportation Building
+106B8 Engineering Hall
+3015 Electrical & Computer Eng Bldg
+220 Ceramics Kiln House
+2015 Electrical & Computer Eng Bldg
+1109 Siebel Center for Comp Sci
+106B6 Engineering Hall
+1131 Siebel Center for Comp Sci
+G7 Foreign Languages Building
+149 Henry Administration Bldg
+G17 Foreign Languages Building
+1118 Foreign Languages Building
+243 Mechanical Engineering Bldg
+E-080 Veterinary Teaching Hospital
+3526 Vet Med Basic Sciences Bldg
+B102 Chemical and Life Sci Lab
+1310 Newmark Civil Engineering Bldg
+201 Talbot Laboratory
+3310 Newmark Civil Engineering Bldg
+225 Temple Hoyne Buell Hall
+2312 Newmark Civil Engineering Bldg
+1233 Newmark Civil Engineering Bldg
+1518 Civil Eng Hydrosystems Lab
+2311 Newmark Civil Engineering Bldg
+B218 Newmark Civil Engineering Bldg
+1311 Newmark Civil Engineering Bldg
+162 Noyes Laboratory
+161 Noyes Laboratory
+336 Davenport Hall
+312 Davenport Hall
+8 Roger Adams Laboratory
+147 Altgeld Hall
+135 Mechanical Engineering Bldg
+106B1 Engineering Hall
+303 Noyes Laboratory
+100 Noyes Laboratory
+1006 Chemistry Annex
+2006 Chemistry Annex
+3007 Chemistry Annex
+3026 Chemistry Annex
+255 Noyes Laboratory
+204 Noyes Laboratory
+263 Noyes Laboratory
+463 Noyes Laboratory
+219 Noyes Laboratory
+459 Noyes Laboratory
+4101 Materials Science & Eng Bld
+230 Davenport Hall
+163 Noyes Laboratory
+171 Roger Adams Laboratory
+330 Davenport Hall
+325 Gregory Hall
+310 David Kinley Hall
+146 Armory
+112 Huff Hall
+180 Bevier Hall
+1001 Huff Hall
+1090 Lincoln Hall
+W223 Turner Hall
+2001 Huff Hall
+3005 Huff Hall
+ARR Huff Hall
+3015 Huff Hall
+385 Education Building
+17 Education Building
+42A Education Building
+ARR Education Building
+201 505 E Green
+4G Education Building
+389 Education Building
+4F Education Building
+242 Education Building
+166 Education Building
+136 Armory
+123 English Building
+G48 Foreign Languages Building
+100 Gregory Hall
+315 Gregory Hall
+1030 Foreign Languages Building
+1026 Lincoln Hall
+242 Armory
+4053 Lincoln Hall
+1024 Lincoln Hall
+62 Krannert Art Museum
+430 Armory
+1064 Lincoln Hall
+4103 Lincoln Hall
+W9 Turner Hall
+M5 Turner Hall
+277 Morrill Hall
+108 David Kinley Hall
+W121 Turner Hall
+1404 Siebel Center for Comp Sci
+1105 Siebel Center for Comp Sci
+1320 Digital Computer Laboratory
+1111 Siebel Center for Comp Sci
+1002 Electrical & Computer Eng Bldg
+0218 Siebel Center for Comp Sci
+ARR Siebel Center for Comp Sci
+1302 Siebel Center for Comp Sci
+1304 Siebel Center for Comp Sci
+1129 Siebel Center for Comp Sci
+0222 Siebel Center for Comp Sci
+2017 Electrical & Computer Eng Bldg
+245 Altgeld Hall
+3081 Electrical & Computer Eng Bldg
+115 English Building
+135 English Building
+61 English Building
+125 English Building
+113 English Building
+G23 Foreign Languages Building
+ARR English Building
+G36 Foreign Languages Building
+132 Davenport Hall
+212 Davenport Hall
+G32 Foreign Languages Building
+322 David Kinley Hall
+1136 Foreign Languages Building
+119 English Building
+312 David Kinley Hall
+313 Davenport Hall
+1024 Foreign Languages Building
+1110 Foreign Languages Building
+1020 Lincoln Hall
+1048 Foreign Languages Building
+1140 Foreign Languages Building
+2127 Krannert Center for Perf Arts
+111 905 W Nevada
+2500 Krannert Center for Perf Arts
+103 905 W Nevada
+109 907 1/2 W Nevada
+110 907 1/2 W Nevada
+219 Gregory Hall
+148 Armory
+4057 Lincoln Hall
+156 English Building
+1046 Foreign Languages Building
+1068 Lincoln Hall
+1001 Electrical & Computer Eng Bldg
+3020 Electrical & Computer Eng Bldg
+4070 Electrical & Computer Eng Bldg
+4074 Electrical & Computer Eng Bldg
+4072 Electrical & Computer Eng Bldg
+1013 Electrical & Computer Eng Bldg
+2022 Electrical & Computer Eng Bldg
+1015 Electrical & Computer Eng Bldg
+3017 Electrical & Computer Eng Bldg
+329 Gregory Hall
+3013 Electrical & Computer Eng Bldg
+3026 Electrical & Computer Eng Bldg
+2076 Electrical & Computer Eng Bldg
+5072 Electrical & Computer Eng Bldg
+4024 Electrical & Computer Eng Bldg
+4022 Electrical & Computer Eng Bldg
+5076 Electrical & Computer Eng Bldg
+5080 Electrical & Computer Eng Bldg
+2013 Electrical & Computer Eng Bldg
+3077 Electrical & Computer Eng Bldg
+3071 Electrical & Computer Eng Bldg
+441 Altgeld Hall
+1003 Electrical & Computer Eng Bldg
+3014 Electrical & Computer Eng Bldg
+123 David Kinley Hall
+326 David Kinley Hall
+215 David Kinley Hall
+119 David Kinley Hall
+317 David Kinley Hall
+125 David Kinley Hall
+134 Armory
+325 David Kinley Hall
+35 Inst Labor &  Industrial Rel
+207 Gregory Hall
+7 David Kinley Hall
+138 Wohlers Hall
+37 Education Building
+2320 Digital Computer Laboratory
+104 Talbot Laboratory
+100H Talbot Laboratory
+127 English Building
+104 English Building
+69 English Building
+304 English Building
+149 English Building
+345 Altgeld Hall
+209 David Kinley Hall
+220 Davenport Hall
+5 Weston Hall
+22 Education Building
+4 Education Building
+428 Armory
+16 Education Building
+21 Psychology Building
+708 Psychology Building
+170 Wohlers Hall
+137C Davenport Hall
+G46 Foreign Languages Building
+69 Computing Applications Bldg
+137D Davenport Hall
+G52 Foreign Languages Building
+1027 Lincoln Hall
+1018 Foreign Languages Building
+4506 Krannert Center for Perf Arts
+210A Architecture Building
+0320 Music Building
+245 Wohlers Hall
+1128 Foreign Languages Building
+321 Gregory Hall
+126 Wohlers Hall
+311 Gregory Hall
+286 Bevier Hall
+194 Agricultural Engr Sciences Bld
+W25 Turner Hall
+280 Agricultural Engr Sciences Bld
+242 Bevier Hall
+224 Freer Hall
+272 Agricultural Engr Sciences Bld
+236 Wohlers Hall
+307 Gregory Hall
+143 Henry Administration Bldg
+327 Gregory Hall
+406B1 Engineering Hall
+302 Transportation Building
+223 Temple Hoyne Buell Hall
+219 Davenport Hall
+122 Davenport Hall
+121 Davenport Hall
+69B Computing Applications Bldg
+108 508 S Sixth
+330 Armory
+144 Loomis Laboratory
+3072E Foreign Languages Building
+243 Armory
+101 Armory
+160 Armory
+133 1207 W Oregon
+2030 1010 W Nevada
+341 Grad Sch of Lib & Info Science
+102 1205 W Nevada
+ARR Armory
+7 Christopher Hall
+130 Freer Hall
+109 Child Development Laboratory
+5 Christopher Hall
+3 Christopher Hall
+2101 1010 W Nevada
+221 Gregory Hall
+1120 Foreign Languages Building
+1060 Lincoln Hall
+1057 Lincoln Hall
+205 Gregory Hall
+1103 Plant Sciences Laboratory
+1125 Plant Sciences Laboratory
+495C Burrill Hall
+494 Burrill Hall
+485C Burrill Hall
+ARR Morrill Hall
+488 Burrill Hall
+304 Noyes Laboratory
+304 Roger Adams Laboratory
+407 Morrill Hall
+208 Agricultural Engr Sciences Bld
+L440 Digital Computer Laboratory
+316 Transportation Building
+1009 Mechanical Engineering Lab
+109 Grad Sch of Lib & Info Science
+12A Grad Sch of Lib & Info Science
+ARR Nat Center for Suprcomp Appl
+ARR Banner Building
+3 Gregory Hall
+13 Gregory Hall
+103 Richmond Studio
+31 Gregory Hall
+1 Gregory Hall
+MP2 Campus Recreation Center East
+19 FAR - Food Service Building
+60 Illini Union
+GYM3 Activities & Recreation Center
+111 Ice Arena
+GYM2 Activities & Recreation Center
+121A Freer Hall
+200 Mumford Hall
+327 Temple Hoyne Buell Hall
+ARR Temple Hoyne Buell Hall
+120 Wohlers Hall
+D Law Building
+H Law Building
+47 Inst Labor &  Industrial Rel
+110 Speech & Hearing Science Bldg
+347 Altgeld Hall
+608 Psychology Building
+242 Grad Sch of Lib & Info Science
+131 Grad Sch of Lib & Info Science
+46 Grad Sch of Lib & Info Science
+126 Grad Sch of Lib & Info Science
+317 Gregory Hall
+14 Illini Hall
+241 Altgeld Hall
+239 Altgeld Hall
+1 Illini Hall
+141 Altgeld Hall
+223 Gregory Hall
+140 Henry Administration Bldg
+173 Altgeld Hall
+314 Altgeld Hall
+159 Altgeld Hall
+145 Altgeld Hall
+445 Altgeld Hall
+343 Altgeld Hall
+447 Altgeld Hall
+336 Mechanical Engineering Bldg
+156 Henry Administration Bldg
+443 Altgeld Hall
+243 Altgeld Hall
+341 Altgeld Hall
+242 Burrill Hall
+113 Gregory Hall
+216 Noyes Laboratory
+203 Burrill Hall
+ARR Chemical and Life Sci Lab
+202 Burrill Hall
+105 Talbot Laboratory
+243C Davenport Hall
+101A Burrill Hall
+147 Loomis Laboratory
+ARR Burrill Hall
+7 Illini Hall
+122 1203 1/2 W Nevada
+260 Mechanical Engineering Bldg
+B124 Chemical and Life Sci Lab
+113 Speech & Hearing Science Bldg
+1318 Mechanical Engineering Lab
+126 Talbot Laboratory
+115 Optical Physics & Eng Lab
+3073 Electrical & Computer Eng Bldg
+2001 Mechanical Engineering Lab
+130B Optical Physics & Eng Lab
+100 Materials Science & Eng Bld
+213A Mechanical Engineering Bldg
+256 Mechanical Engineering Bldg
+190 Engineering Sciences Building
+133 Armory
+300 Armory
+113 Armory
+105 Ceramics Kiln House
+151 Loomis Laboratory
+204 Ceramics Kiln House
+113 Ceramics Building
+0358 Music Building
+0359 Music Building
+4033 Music Building
+203 Smith Memorial Hall
+220 Smith Memorial Hall
+0357 Music Building
+0356 Music Building
+0354 Music Building
+0061 Music Building
+0325 Music Building
+6 Smith Memorial Hall
+103 Smith Memorial Hall
+108 Smith Memorial Hall
+106 Smith Memorial Hall
+155 Allen Residence Hall
+211 Smith Memorial Hall
+216 Smith Memorial Hall
+0323 Music Building
+2317 Krannert Center for Perf Arts
+2310 Krannert Center for Perf Arts
+1030 Music Building
+141 Harding Band Building
+205 Smith Memorial Hall
+2418 Krannert Center for Perf Arts
+25 Smith Memorial Hall
+167 Harding Band Building
+11 Smith Memorial Hall
+4501C Krannert Center for Perf Arts
+0303 Music Building
+2334 Music Building
+140 Harding Band Building
+5E Smith Memorial Hall
+204 Smith Memorial Hall
+31 Psychology Building
+508 Psychology Building
+1005 Beckman Institute
+815 Psychology Building
+225 Talbot Laboratory
+N527 Turner Hall
+337 Armory
+151 Armory
+2506 Vet Med Basic Sciences Bldg
+1220 Vet Med Basic Sciences Bldg
+2281 Vet Med Basic Sciences Bldg
+null Vet Med Basic Sciences Bldg
+1062 Lincoln Hall
+137 Henry Administration Bldg
+402 Gregory Hall
+158 Loomis Laboratory
+141 Loomis Laboratory
+222 Loomis Laboratory
+276 Loomis Laboratory
+5105 Engineering Sciences Building
+6105 Engineering Sciences Building
+G20 Foreign Languages Building
+223 David Kinley Hall
+115 David Kinley Hall
+404 David Kinley Hall
+110 Inst Gov & Public Affairs Bldg
+ARR David Kinley Hall
+138 Henry Administration Bldg
+13 Psychology Building
+27 Psychology Building
+142 Psychology Building
+453D Psychology Building
+29 Psychology Building
+258 Psychology Building
+289 Psychology Building
+819 Psychology Building
+219A Psychology Building
+35 Psychology Building
+ARR Beckman Institute
+207 Psychology Building
+142 Henry Administration Bldg
+A Law Building
+ARR Foreign Languages Building
+152 Allen Residence Hall
+111 Speech & Hearing Science Bldg
+216 Speech & Hearing Science Bldg
+2027 1010 W Nevada
+2019 1010 W Nevada
+2018 1010 W Nevada
+2023 1010 W Nevada
+160 English Building
+122 Illini Hall
+252 Mechanical Engineering Bldg
+4118 Krannert Center for Perf Arts
+3605 Krannert Center for Perf Arts
+3606 Krannert Center for Perf Arts
+3601 Krannert Center for Perf Arts
+4503 Krannert Center for Perf Arts
+3607 Krannert Center for Perf Arts
+2119 Krannert Center for Perf Arts
+4114 Krannert Center for Perf Arts
+ARR Krannert Center for Perf Arts
+2121 Krannert Center for Perf Arts
+119 Agricultural Engr Sciences Bld
+227 Temple Hoyne Buell Hall
+19 Temple Hoyne Buell Hall
+ARR Veterinary Teaching Hospital
+2251 Vet Med Basic Sciences Bldg
+2258 Vet Med Basic Sciences Bldg
+250 Veterinary Teaching Hospital
+100 Veterinary Teaching Hospital
+2271C Vet Med Basic Sciences Bldg
