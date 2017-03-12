@@ -67,6 +67,13 @@ def add_review():
 def handle_review():
     cursor = mysql.connection.cursor()
     if request.form['submit'] == 'edit':
+        user_name = request.form['reviewUserName']
+        building = request.form['reviewBuilding']
+        classroom = request.form['reviewClassroom']
+        
+        rating = request.form['reviewRating']
+        review_text = request.form['reviewText']                
+
         return 'Edit'
     elif request.form['submit'] == 'delete':
         user_name = request.form['reviewUserName']
