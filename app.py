@@ -73,6 +73,7 @@ def handle_review():
         
         rating = request.form['reviewRating']
         review_text = request.form['reviewText']                
+        cursor.execute("UPDATE Review SET Rating = %s AND Text = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (rating, review_text, user_name, building, classroom))
 
         return 'Edit'
     elif request.form['submit'] == 'delete':
