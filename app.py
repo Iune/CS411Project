@@ -73,9 +73,12 @@ def handle_review():
         
         rating = request.form['reviewRating']
         review_text = request.form['reviewText']                
-        cursor.execute("UPDATE Review SET Rating = %s AND Text = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (rating, review_text, user_name, building, classroom))
+        cursor.execute("UPDATE Review SET Rating = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (rating, user_name, building, classroom))
+        cursor.execute("UPDATE Review SET Text = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (review_text, user_name, building, classroom))
+        mysql.connection.commit()
 
-        return 'Edit'
+        return redirect(url_for("room", building=building, classname=classroom))
+        
     elif request.form['submit'] == 'delete':
         user_name = request.form['reviewUserName']
         building = request.form['reviewBuilding']

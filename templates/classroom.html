@@ -117,7 +117,7 @@
 						<div class="modal-body">
 							<div class="form-group">
 								<label>Name:</label>
-								<input type="text" class="form-control" name="reviewUserName" value="{{review['userName']}}" readonly>
+								<input type="text" class="form-control" value="{{review['userName']}}" readonly>
 							</div>
 							<div class="form-group">
 								<label>Rating:</label>
@@ -145,7 +145,7 @@
 									{% if review['rating'] == 5 %}
 									<option class="selection" value="5" selected>5</option>
 									{% else %}
-									<option class="selection" value="5">6</option>
+									<option class="selection" value="5">5</option>
 									{% endif %}
 								</select>
 							</div>
