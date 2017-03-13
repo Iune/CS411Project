@@ -86,7 +86,7 @@
 			<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
 			<div class="list-group-item">
 				<div class="container">
-					<div class="col-lg-4">
+					<div class="col-lg-5">
 						<h5 class="list-group-item-heading">{{review['userName']}} at {{review['time']}}</h5>
 						<p class="list-group-item-text">{{review['text']}}</p>
 					</div>
@@ -98,7 +98,7 @@
 						{% endfor %}
 						</p>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-2">
 						<div class="btn-group">
 							<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal{{review['userName']}}"><span class="glyphicon glyphicon-edit"/></button>
 							<button name="submit" type="button submit" class="btn btn-danger" value="delete"><span class="glyphicon glyphicon-remove"/></button>
