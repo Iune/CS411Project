@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify, render_template, abort, request, redirect, url_for
 from flask_mysqldb import MySQL
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import time
 import datetime
 
@@ -108,13 +109,13 @@ def room(building, classname):
     #         classroom_data['tags'].append(classroom[4])
     # Load reviews
     cursor.execute("SELECT * FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, classname)) 
-    reviews = cursor.fetchall()
-    reviews_data = []
-    for review in reviews:
+    reviews_list = cursor.fetchall()
+    reviews = []
+    for review in reviews_list:
         tags = []
         cursor.execute("SELECT * FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
         tags_list = cursor.fetchall()
-        reviews_data.append({
+        reviews.append({
             'userName': review[3],
             'text': review[2],
             'rating': review[0],
@@ -123,8 +124,21 @@ def room(building, classname):
             'time': review[1]
         })
 
-    return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews_data)
+    words = {}
+    sid = SentimentIntensityAnalyzer()
+    for review in reviews:
+        tokens = review['text'].split(" ")
+        for word in tokens:
+            try:
+                words[word]['count'] += 1
+            except KeyError:
+                sentiment = sid.polarity_scores(word)['compound']
+                sentiment_type = "positive"
+                if sentiment < 0:
+                    sentiment_type = "negative"
+                words[word] = {'count': 1, 'sentiment': sentiment_type }
 
+    return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
 
 if __name__ == "__main__":
     app.run(debug=True)
