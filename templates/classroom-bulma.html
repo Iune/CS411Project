@@ -8,11 +8,6 @@
 	</div>
 </section>
 <section>
-	<div class="box">
-		<h3 class="title">Overview</h3>
-	</div>
-
-
 	<div class="columns">
 	<div class="column">
 		<nav class="panel">
@@ -32,6 +27,15 @@
 		</nav>
 	</div>
 	<div class="column">
+		<nav class="panel">
+			<p class="panel-heading">Tags</p>
+			<div class="panel-block">
+				<p>{% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
+						{% for tag in classroom['tags'] %}
+						<span class="tag is-primary is-medium">{{tag}}</span>
+						{% endfor %}</p>
+			</div>
+		</nav>
 	</div>
 </section>
 <!-- <div class="page-header">
