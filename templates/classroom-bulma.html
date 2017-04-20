@@ -30,7 +30,7 @@
 		<nav class="panel">
 			<p class="panel-heading">Tags</p>
 			<div class="panel-block">
-				<p><span class="tag is-primary">Hot</span> <span class="tag is-primary">Air Conditioning</span> {% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
+				<p><span class="tag is-primary">Hot</span><span class="tag is-primary">Air Conditioning</span> {% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
 						{% for tag in classroom['tags'] %}
 						<span class="tag is-primary is-medium">{{tag}}</span>
 						{% endfor %}</p>
