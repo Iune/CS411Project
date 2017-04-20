@@ -91,10 +91,6 @@
 	{% endif %}
 	{% for review in reviews %}
 	<article class="media">
-	<form action="{{url_for('handle_review')}}" method="post">
-	<input type="hidden" name="reviewUserName" value="{{review['userName']}}"></input>
-	<input type="hidden" name="reviewClassroom" value="{{classroom['roomNumber']}}"></input>
-	<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
 		<div class="media-content">
 			<div class="content">
 			<p>
@@ -113,39 +109,43 @@
 			</div>
 		</div>
 		<div class="media-right">
-			<div class="field has-addons">
-				<p class="control">
-					<button class="button is-small" value="edit">
-						<span class="icon is-small">
-						<i class="fa fa-edit"></i>
-						</span>
-					</button>
-				</p>
-				<p class="control">
-					<button name="submit" class="button is-small" value="delete">
-						<span class="icon is-small">
-						<i class="fa fa-remove"></i>
-						</span>
-					</button>
-				</p>
-			</div>
+			<form action="{{url_for('handle_review')}}" method="post">
+				<input type="hidden" name="reviewUserName" value="{{review['userName']}}"></input>
+				<input type="hidden" name="reviewClassroom" value="{{classroom['roomNumber']}}"></input>
+				<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
+				<div class="field has-addons">
+					<p class="control">
+						<button class="button is-small" value="edit">
+							<span class="icon is-small">
+							<i class="fa fa-edit"></i>
+							</span>
+						</button>
+					</p>
+					<p class="control">
+						<button name="submit" class="button is-small" value="delete">
+							<span class="icon is-small">
+							<i class="fa fa-remove"></i>
+							</span>
+						</button>
+					</p>
+				</div>
+				<div class="modal">
+				<div class="modal-background"></div>
+				<div class="modal-card">
+				<header class="modal-card-head">
+				<p class="modal-card-title">Edit Review</p>
+				</header>
+				<section class="modal-card-body">
+				<!-- Content ... -->
+				</section>
+				<footer class="modal-card-foot">
+				<a class="button is-outlined">Save</a>
+				<a class="button is-outlined">Cancel</a>
+				</footer>
+				</div>
+				</div>
+			</form>
 		</div>
-<div class="modal">
-	<div class="modal-background"></div>
-	<div class="modal-card">
-		<header class="modal-card-head">
-		<p class="modal-card-title">Edit Review</p>
-		</header>
-		<section class="modal-card-body">
-		<!-- Content ... -->
-		</section>
-		<footer class="modal-card-foot">
-		<a class="button is-outlined">Save</a>
-		<a class="button is-outlined">Cancel</a>
-		</footer>
-	</div>
-</div>
-	</form>
 	</article>
 	{% endfor %}
 </section>
