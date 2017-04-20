@@ -10,15 +10,23 @@
 <section>
 	<div class="columns">
 	<div class="column">
-	<nav class="panel">
-		<p class="panel-heading">Classroom Information</p>
-		<div class="panel-block">
-			<p><b>Building:</b> {{ classroom['buildingName'] }}</p>
-		</div>
-	</nav>
+		<nav class="panel">
+			<p class="panel-heading">Classroom Information</p>
+			<div class="panel-block">
+				<p><b>Building:</b> {{ classroom['buildingName'] }}</p>
+			</div>
+			<div class="panel-block">
+				<p><b>Room:</b> {{ classroom['roomNumber'] }}</p>
+			</div>
+			<div class="panel-block">
+				<p><b>Address:</b> {{ classroom['buildingAddress'] }}</p>
+			</div>
+			<div class="panel-block">
+				<p><b>Average Rating:</b> {{ classroom['averageRating'] }}</p>
+			</div>
+		</nav>
 	</div>
 	<div class="column">
-	</div>
 	</div>
 </section>
 <!-- <div class="page-header">
@@ -126,10 +134,8 @@
 						</div>
 					</div>
 				</div>
-			<!-- Modal -->
 			<div id="modal{{review['userName']}}" class="modal fade" role="dialog">
 				<div class="modal-dialog">
-					<!-- Modal content-->
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
