@@ -10,67 +10,69 @@
 <section>
 	<h3 class="title">Overview</h3>
 	<div class="columns">
-	<div class="column">
-		<nav class="panel">
-			<p class="panel-heading">Classroom Information</p>
-			<div class="panel-block">
-				<p><b>Building:</b> {{ classroom['buildingName'] }}</p>
-			</div>
-			<div class="panel-block">
-				<p><b>Room:</b> {{ classroom['roomNumber'] }}</p>
-			</div>
-			<div class="panel-block">
-				<p><b>Address:</b> {{ classroom['buildingAddress'] }}</p>
-			</div>
-			<div class="panel-block">
-				<p><b>Average Rating:</b> {{ classroom['averageRating'] }}</p>
-			</div>
-		</nav>
-	</div>
-	<div class="column">
-		<nav class="panel">
-			<p class="panel-heading">Tags</p>
-			<div class="panel-block">
-				<p>{% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
-						{% for tag in classroom['tags'] %}
-						<span class="tag is-primary is-medium">{{tag}}</span>&nbsp;
-						{% endfor %}</p>
-			</div>
-		</nav>
+		<div class="column">
+			<nav class="panel">
+				<p class="panel-heading">Classroom Information</p>
+				<div class="panel-block">
+					<p><b>Building:</b> {{ classroom['buildingName'] }}</p>
+				</div>
+				<div class="panel-block">
+					<p><b>Room:</b> {{ classroom['roomNumber'] }}</p>
+				</div>
+				<div class="panel-block">
+					<p><b>Address:</b> {{ classroom['buildingAddress'] }}</p>
+				</div>
+				<div class="panel-block">
+					<p><b>Average Rating:</b> {{ classroom['averageRating'] }}</p>
+				</div>
+			</nav>
+		</div>
+		<div class="column">
+			<nav class="panel">
+				<p class="panel-heading">Tags</p>
+				<div class="panel-block">
+					<p>{% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
+							{% for tag in classroom['tags'] %}
+							<span class="tag is-primary is-medium">{{tag}}</span>&nbsp;
+							{% endfor %}</p>
+				</div>
+			</nav>
+		</div>
 	</div>
 </section>
 <section>
 	<h3 class="title">Add a Review</h3>
-	<div class="columns">
 		<form id="addReviewForm" action="{{url_for('add_review')}}", method="post">
-			<div class="column">
-				<div class="field">
-					<label class="label">Name</label>
-					<p class="control">
-				   		<input class="input" type="text" name="userNameText" placeholder="Name">
-					</p>
-				</div>	
-				<div class="field">
-					<label class="label">Rating</label>
-					<p class="control">
-						<span class="select">
-							<select name="ratingSelectInput" id="ratingSelect">
-								<option class="selection" value="1">1</option>
-								<option class="selection" value="2">2</option>
-								<option class="selection" value="3">3</option>
-								<option class="selection" value="4">4</option>
-								<option class="selection" value="5">5</option>
-							</select>
-						</span>
-					</p>
-				</div>	
-			</div>
-			<div class="column">
-				<div class="field">
-					<label class="label">Review</label>
-					<p class="control">
-    					<textarea class="textarea" rows="5" name="reviewText"></textarea>
-  					</p>
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<label class="label">Name</label>
+						<p class="control">
+					   		<input class="input" type="text" name="userNameText" placeholder="Name">
+						</p>
+					</div>	
+					<div class="field">
+						<label class="label">Rating</label>
+						<p class="control">
+							<span class="select">
+								<select name="ratingSelectInput" id="ratingSelect">
+									<option class="selection" value="1">1</option>
+									<option class="selection" value="2">2</option>
+									<option class="selection" value="3">3</option>
+									<option class="selection" value="4">4</option>
+									<option class="selection" value="5">5</option>
+								</select>
+							</span>
+						</p>
+					</div>	
+				</div>
+				<div class="column">
+					<div class="field">
+						<label class="label">Review</label>
+						<p class="control">
+	    					<textarea class="textarea" rows="5" name="reviewText"></textarea>
+	  					</p>
+					</div>
 				</div>
 			</div>
 			<div class="field is-grouped">
