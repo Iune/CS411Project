@@ -39,7 +39,7 @@ def index():
             'buildingClassName' : classroom[0].replace(' ', ''),
             'roomNumber' : classroom[2]
         })
-    return render_template('index.html', title="Home", buildings=buildings_data, classrooms=classrooms_data)
+    return render_template('index-bulma.html', title="Home", buildings=buildings_data, classrooms=classrooms_data)
 
 @app.route('/search', methods=['POST'])
 def search():
