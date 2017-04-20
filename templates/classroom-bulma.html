@@ -131,19 +131,19 @@
 					</p>
 				</div>
 				<div class="modal" id="modal{{review['userName']}}">
-				<div class="modal-background"></div>
-				<div class="modal-card">
-				<header class="modal-card-head">
-				<p class="modal-card-title">Edit Review</p>
-				</header>
-				<section class="modal-card-body">
-				<!-- Content ... -->
-				</section>
-				<footer class="modal-card-foot">
-				<a class="button is-outlined">Save</a>
-				<a class="button is-outlined">Cancel</a>
-				</footer>
-				</div>
+					<div class="modal-background"></div>
+					<div class="modal-card">
+					<header class="modal-card-head">
+					<p class="modal-card-title">Edit Review</p>
+					<button class="delete" onclick="$('#modal{{review['userName']}}').removeClass('is-active');"></button>
+					</header>
+					<section class="modal-card-body">
+					<!-- Content ... -->
+					</section>
+					<footer class="modal-card-foot">
+					<a class="button">Save</a>
+					</footer>
+					</div>
 				</div>
 			</form>
 		</div>
