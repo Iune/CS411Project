@@ -133,16 +133,68 @@
 				<div class="modal" id="modal{{review['userName']}}">
 					<div class="modal-background"></div>
 					<div class="modal-card">
-					<header class="modal-card-head">
-					<p class="modal-card-title">Edit Review</p>
-					<button class="delete" onclick="$('#modal{{review['userName']}}').removeClass('is-active');"></button>
-					</header>
-					<section class="modal-card-body">
-					<!-- Content ... -->
-					</section>
-					<footer class="modal-card-foot">
-					<a class="button">Save</a>
-					</footer>
+						<header class="modal-card-head">
+							<p class="modal-card-title">Edit Review</p>
+							<button type="button" class="delete" onclick="$('#modal{{review['userName']}}').removeClass('is-active');"></button>
+						</header>
+						<section class="modal-card-body">
+						
+
+
+						<div class="field">
+							<label class="label">Name</label>
+							<p class="control">
+						   		<input class="input" type="text" name="userNameText" placeholder="Name" readonly>{{ review['userName'] }}</p>
+							</p>
+						</div>	
+						<div class="field">
+							<label class="label">Rating</label>
+							<p class="control">
+
+							<select name="reviewRating" id="reviewRating">
+								{% if review['rating'] == 1 %}
+								<option class="selection" value="1" selected>1</option>
+								{% else %}
+								<option class="selection" value="1">1</option>
+								{% endif %}
+								{% if review['rating'] == 2 %}
+								<option class="selection" value="2" selected>2</option>
+								{% else %}
+								<option class="selection" value="2">2</option>
+								{% endif %}
+								{% if review['rating'] == 3 %}
+								<option class="selection" value="3" selected>3</option>
+								{% else %}
+								<option class="selection" value="3">3</option>
+								{% endif %}
+								{% if review['rating'] == 4 %}
+								<option class="selection" value="4" selected>4</option>
+								{% else %}
+								<option class="selection" value="4">4</option>
+								{% endif %}
+								{% if review['rating'] == 5 %}
+								<option class="selection" value="5" selected>5</option>
+								{% else %}
+								<option class="selection" value="5">5</option>
+								{% endif %}
+							</select>
+							</p>
+						</div>	
+						<div class="field">
+							<label class="label">Review</label>
+							<p class="control">
+								<textarea class="textarea" rows="5" name="reviewText">{{review['text']}}</textarea>
+								</p>
+						</div>
+						<!-- <input type="hidden" name="buildingNameInput" value="{{classroom['buildingName']}}"></input>
+						<input type="hidden" name="roomNumberInput" value="{{classroom['roomNumber']}}"></input>
+						-->
+
+
+						</section>
+						<footer class="modal-card-foot">
+							<button class="button">Save</a>
+						</footer>
 					</div>
 				</div>
 			</form>
