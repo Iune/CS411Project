@@ -99,6 +99,12 @@
 				{{ review['ratingStars'] }}
 				<br/>
 				{{ review['text'] }}
+				{% if review['tags']|length != 0 %}
+				<br/>
+				{% for tag in review['tags'] %}
+				<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
+				{% endfor %}
+				{% endif %}
 			</p>
 			</div>
 		</div>
