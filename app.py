@@ -123,7 +123,7 @@ def room(building, classname):
             'time': review[1]
         })
 
-    return render_template('classroom.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews_data)
+    return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews_data)
 
 
 if __name__ == "__main__":
