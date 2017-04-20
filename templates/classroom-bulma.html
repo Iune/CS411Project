@@ -90,11 +90,11 @@
 	<p><i>No reviews</i></p>
 	{% endif %}
 	{% for review in reviews %}
+	<article class="media">
 	<form action="{{url_for('handle_review')}}" method="post">
 	<input type="hidden" name="reviewUserName" value="{{review['userName']}}"></input>
 	<input type="hidden" name="reviewClassroom" value="{{classroom['roomNumber']}}"></input>
 	<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
-	<article class="media">
 		<div class="media-content">
 			<div class="content">
 			<p>
@@ -145,8 +145,8 @@
 		</footer>
 	</div>
 </div>
-	</article>
 	</form>
+	</article>
 	{% endfor %}
 </section>
 <br/>
