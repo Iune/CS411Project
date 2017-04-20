@@ -187,11 +187,6 @@
 								<textarea class="textarea" rows="5" name="reviewText">{{review['text']}}</textarea>
 							</p>
 						</div>
-						<!-- <input type="hidden" name="buildingNameInput" value="{{classroom['buildingName']}}"></input>
-						<input type="hidden" name="roomNumberInput" value="{{classroom['roomNumber']}}"></input>
-						-->
-
-
 						</section>
 						<footer class="modal-card-foot">
 							<button class="button" name="submit" value="edit">Save</a>
@@ -204,102 +199,4 @@
 	{% endfor %}
 </section>
 <br/>
-<!--
-<div class="col-lg-12">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<div class="panel-title">Reviews</div>
-		</div>
-		<div class="list-group">
-			{% if reviews|length == 0 %}  
-			<div class="list-group-item">
-			<p class="list-group-item-text"><i>No reviews</i></p>
-			</div>
-			{% endif %}
-			{% for review in reviews %}
-			<form action="{{url_for('handle_review')}}" method="post">
-			<input type="hidden" name="reviewUserName" value="{{review['userName']}}"></input>
-			<input type="hidden" name="reviewClassroom" value="{{classroom['roomNumber']}}"></input>
-			<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
-			<div class="list-group-item">
-				<div class="container">
-					<div class="col-lg-5">
-						<h5 class="list-group-item-heading">{{review['userName']}} at {{review['time']}}</h5>
-						<p class="list-group-item-text">{{review['text']}}</p>
-					</div>
-					<div class="col-lg-5">
-						<h5 class="list-group-item-heading">{{review['ratingStars']}}</h5>
-						<p class="list-group-item-text">{% if review['tags']|length == 0 %} <i>No tags</i> {% endif %}
-						{% for tag in review['tags'] %}
-						<span class="label label-primary">{{tag}}</span>
-						{% endfor %}
-						</p>
-					</div>
-					<div class="col-lg-2">
-						<div class="btn-group">
-							<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal{{review['userName']}}"><span class="glyphicon glyphicon-edit"/></button>
-							<button name="submit" type="button submit" class="btn btn-danger" value="delete"><span class="glyphicon glyphicon-remove"/></button>
-						</div>
-					</div>
-				</div>
-			<div id="modal{{review['userName']}}" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Edit Review</h4>
-						</div>
-						<div class="modal-body">
-							<div class="form-group">
-								<label>Name:</label>
-								<input type="text" class="form-control" value="{{review['userName']}}" readonly>
-							</div>
-							<div class="form-group">
-								<label>Rating:</label>
-								<select class="form-control" name="reviewRating" id="reviewRating">
-									{% if review['rating'] == 1 %}
-									<option class="selection" value="1" selected>1</option>
-									{% else %}
-									<option class="selection" value="1">1</option>
-									{% endif %}
-									{% if review['rating'] == 2 %}
-									<option class="selection" value="2" selected>2</option>
-									{% else %}
-									<option class="selection" value="2">2</option>
-									{% endif %}
-									{% if review['rating'] == 3 %}
-									<option class="selection" value="3" selected>3</option>
-									{% else %}
-									<option class="selection" value="3">3</option>
-									{% endif %}
-									{% if review['rating'] == 4 %}
-									<option class="selection" value="4" selected>4</option>
-									{% else %}
-									<option class="selection" value="4">4</option>
-									{% endif %}
-									{% if review['rating'] == 5 %}
-									<option class="selection" value="5" selected>5</option>
-									{% else %}
-									<option class="selection" value="5">5</option>
-									{% endif %}
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="comment">Review:</label>
-								<textarea class="form-control" rows="5" name="reviewText">{{review['text']}}</textarea>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button submit" class="btn btn-default" name="submit" value="edit">Edit Review</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-			</form>
-			{% endfor %}
-		</div>
-	</div>
-</div> -->
 {% endblock %}
