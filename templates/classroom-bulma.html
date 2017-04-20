@@ -22,9 +22,9 @@
 				<div class="panel-block">
 					<p><b>Address:</b> {{ classroom['buildingAddress'] }}</p>
 				</div>
-				<div class="panel-block">
+				<!-- <div class="panel-block">
 					<p><b>Average Rating:</b> {{ classroom['averageRating'] }}</p>
-				</div>
+				</div> -->
 			</nav>
 		</div>
 		<div class="column">
@@ -115,7 +115,7 @@
 				<input type="hidden" name="reviewBuilding" value="{{classroom['buildingName']}}"></input>
 				<div class="field has-addons">
 					<p class="control">
-						<button class="button is-small" value="edit">
+						<button class="button is-small" data-toggle="modal" data-target="#modal{{review['userName']}}">
 							<span class="icon is-small">
 							<i class="fa fa-edit"></i>
 							</span>
@@ -129,7 +129,7 @@
 						</button>
 					</p>
 				</div>
-				<div class="modal">
+				<div class="modal" id="modal{{review['userName']}}">
 				<div class="modal-background"></div>
 				<div class="modal-card">
 				<header class="modal-card-head">
