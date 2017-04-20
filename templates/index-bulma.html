@@ -5,34 +5,38 @@
 	<div class="column">
 		<h1 class="title">Search Classrooms</h1>
 		<form id="topSearchForm" action="{{url_for('search')}}", method="post">
-			<div class="field is-horizontal">
-				<label class="control-label">Building Name</label>
-				<p class="control">
-					<span class="select">
-						<select name="buildingNameInput" id="buildingName">
-							<option class="selection" value="">Select Building</option>
-							{% for building in buildings %}
-							<option class="{{building['className']}}" value="{{building['name']}}">{{building['name']}}</option>
-							{% endfor %}
-						</select>
-					</span>
-				</p>
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<label class="label">Building Name</label>
+						<p class="control">
+							<span class="select">
+								<select name="buildingNameInput" id="buildingName">
+									<option class="selection" value="">Select Building</option>
+									{% for building in buildings %}
+									<option class="{{building['className']}}" value="{{building['name']}}">{{building['name']}}</option>
+									{% endfor %}
+								</select>
+							</span>
+						</p>
+					</div>				
+				</div>
+				<div class="column">
+					<div class="field">
+						<label class="label">Classroom</label>
+						<p class="control">
+							<span class="select">
+								<select name="classroomNameInput" id="classroomName">
+									<option class="selection" value="">Select Classroom</option>
+									{% for classroom in classrooms %}
+									<option class="{{classroom['buildingClassName']}}" value="{{classroom['roomNumber']}}">{{classroom['roomNumber']}} – {{classroom['buildingName']}}</option>
+									{% endfor %}
+								</select>
+							</span>
+						</p>
+					</div>
+				</div>
 			</div>
-
-			<div class="field">
-				<label class="control-label">Classroom</label>
-				<p class="control">
-					<span class="select">
-						<select name="classroomNameInput" id="classroomName">
-							<option class="selection" value="">Select Classroom</option>
-							{% for classroom in classrooms %}
-							<option class="{{classroom['buildingClassName']}}" value="{{classroom['roomNumber']}}">{{classroom['roomNumber']}} – {{classroom['buildingName']}}</option>
-							{% endfor %}
-						</select>
-					</span>
-				</p>
-			</div>
-
 			<div class="field">
 				<p class="control">
 					<button class="button">Search</button>
