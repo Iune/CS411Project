@@ -83,7 +83,7 @@ def register():
     user_name = request.form['userNameText']
     password = request.form['passwordText']
     user = User(user_name, password)
-    user.save_user()
+    User.save_user(user)
     return redirect(url_for('/'))
 
 @app.route('/add_review', methods=['POST'])
