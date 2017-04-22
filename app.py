@@ -103,24 +103,15 @@ def login():
 
         user = User.get_user(username)
         login_user(user)
-        # if user == None:
-        #     return abort(401)
-        # if user.password != password:
-        #     return abort(401)
-        # else:
-
         return redirect(url_for('index'))
     else:
         return render_template('login-bulma.html', title="Login")
 
-    #     if password == username + "_secret":
-    #         user = User(id)
-    #         login_user(user)
-    #         return redirect(request.args.get("next"))
-    #     else:
-    #         return abort(401)
-    # else:
-    #     return 
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 @app.route('/add_review', methods=['POST'])
 def add_review():

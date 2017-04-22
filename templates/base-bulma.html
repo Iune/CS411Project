@@ -14,8 +14,11 @@
 		</div>
 		<div class="nav-right">
 			<a class="nav-item" href="/sign_up">Sign Up</a>
+			{% if current_user.is_authenticated %}
+			<a class="nav-item" href="/logout">Log Out</a>
+			{% else %}
 			<a class="nav-item" href="/login">Login</a>
-			<a class="nav-item" href="#">Log Out</a>
+			{% endif %}
 		</div>
 	</nav>
 
