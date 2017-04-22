@@ -8,7 +8,7 @@ import time
 import datetime
 
 app = Flask(__name__)
-
+app.secret_key = 'some secret key'
 # MySQL Configurations
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'c$411Pr0J'
