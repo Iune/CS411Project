@@ -94,7 +94,7 @@ def login():
         username = request.form['userNameText']
         password = request.form['passwordText']        
 
-        user = User(username)
+        user = User.get_user(username)
         if user == None:
             return abort(401)
         if user.password != password:
