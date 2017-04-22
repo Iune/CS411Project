@@ -8,17 +8,15 @@ import time
 import datetime
 
 app = Flask(__name__)
+
 # MySQL Configurations
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'c$411Pr0J'
 app.config['MYSQL_DB'] = 'RateMyClassroomData'
 app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'testuser'
-# app.config['MYSQL_PASSWORD'] = 'test123'
-# app.config['MYSQL_DB'] = 'TESTDB'
-# app.config['MYSQL_HOST'] = 'localhost'
 mysql = MySQL(app)
 
+# Login Configuration
 login_manager = LoginManager()
 login_manager.init_app(app)
 
@@ -29,9 +27,12 @@ class User(UserMixin):
 
     @staticmethod
     def save_user(user):
-        cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO User (Name, PasswordHash) VALUES (%s, %s)", (user.name, user.password))  
-        mysql.connection.commit()        
+        try:
+            cursor = mysql.connection.cursor()
+            cursor.execute("INSERT INTO User (Name, PasswordHash) VALUES (%s, %s)", (user.name, user.password))  
+            mysql.connection.commit()   
+        except mysql_exceptions.IntegrityError:
+            return None     
 
     @staticmethod
     def get_user(user_name):
