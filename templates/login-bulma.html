@@ -1,0 +1,33 @@
+
+<section>
+<div class="columns">
+	<div class="column">
+		<h1 class="title">Register</h1>
+		<form id="topSearchForm" action="{{url_for('register')}}", method="post">
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<label class="label">User Name</label>
+						<p class="control">
+							<input class="input" type="text" name="userNameText" placeholder="Name">
+						</p>
+					</div>				
+				</div>
+				<div class="column">
+					<div class="field">
+						<label class="label">Password</label>
+						<p class="control">
+							<input class="input" type="password" name="passwordText" placeholder="Password">
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<p class="control">
+					<button class="button">Register</button>
+				</p>
+			</div>
+		</form>
+	</div>
+</div>
+</section>

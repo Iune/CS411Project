@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import jsonify, render_template, abort, request, redirect, url_for
 from flask_mysqldb import MySQL
+from flask.ext.login import LoginManager, UserMixin, \
+                                login_required, login_user, logout_user 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import time
 import datetime
@@ -16,6 +18,30 @@ app.config['MYSQL_HOST'] = 'localhost'
 # app.config['MYSQL_DB'] = 'TESTDB'
 # app.config['MYSQL_HOST'] = 'localhost'
 mysql = MySQL(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+class User(UserMixin):
+    def __init__ (self, name, password):
+        self.name = name
+        self.password = password
+
+    @staticmethod
+    def save_user(user):
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO User (Name, PasswordHash) VALUES (%s, %s)", (user.name, user.password))  
+        mysql.connection.commit()        
+
+    @staticmethod
+    def get_user(user_name):
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM User WHERE Name = %s", (user_name,))
+        user_info = list(cursor.fetchall())
+        if len(user_info) == 0:
+            return None
+        else:
+            return User(user_info[0][0], user_info[0][1])
 
 @app.route('/')
 def index():
@@ -47,6 +73,18 @@ def search():
     building_name = request.form['buildingNameInput']
     classroom_name = request.form['classroomNameInput']
     return redirect(url_for('room', building=building_name, classname=classroom_name))
+
+@app.route('/sign_up', methods=['GET']):
+def sign_up():
+    return render_template('login-bulma.html', title="Sign Up")
+
+@app.route('/register', methods=['POST'])
+def register():
+    user_name = request.form['userNameText']
+    password = request.form['passwordText']
+    user = User(user_name, password)
+    user.save_user()
+    return redirect(url_for('/'))
 
 @app.route('/add_review', methods=['POST'])
 def add_review():
