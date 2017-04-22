@@ -100,7 +100,8 @@ def login():
         if user.password != password:
             return abort(401)
         else:
-            return redirect(url_for('index'))
+            # return redirect(url_for('index'))
+            return abort(418)
     else:
         return render_template('login-bulma.html', title="Login")
 
