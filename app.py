@@ -91,8 +91,8 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']        
+        username = request.form['userNameText']
+        password = request.form['passwordText']        
 
         # user = User(username)
         # if user == None:
