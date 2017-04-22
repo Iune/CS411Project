@@ -27,6 +27,10 @@ class User(UserMixin):
         self.password = password
 
     @staticmethod
+    def get_id(id):
+        return self.name
+
+    @staticmethod
     def save_user(user):
         try:
             cursor = mysql.connection.cursor()
