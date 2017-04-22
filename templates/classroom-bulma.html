@@ -41,6 +41,7 @@
 	</div>
 </section>
 <br/>
+{% if current_user.is_authenticated %}
 <section>
 	<h3 class="title">Add a Review</h3>
 		<form id="addReviewForm" action="{{url_for('add_review')}}", method="post">
@@ -49,7 +50,7 @@
 					<div class="field">
 						<label class="label">Name</label>
 						<p class="control">
-					   		<input class="input" type="text" name="userNameText" placeholder="Name">
+					   		<input class="input" type="hidden" name="userNameText" value="{{current_user.name}}">
 						</p>
 					</div>	
 					<div class="field">
@@ -83,6 +84,7 @@
 			</div>
 		</form>
 </section>
+{% endif %}
 <br/>
 <section>
 	<h3 class="title">Reviews</h3>
