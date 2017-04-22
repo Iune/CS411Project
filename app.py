@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import jsonify, render_template, abort, request, redirect, url_for
 from flask_mysqldb import MySQL
-from flask.ext.login import LoginManager, UserMixin, \
+from flask_login import LoginManager, UserMixin, \
                                 login_required, login_user, logout_user 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import time
