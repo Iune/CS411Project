@@ -26,7 +26,7 @@ class User(UserMixin):
         self.name = name
         self.password = password
 
-    def get_id(self, id):
+    def get_id(self):
         return self.name
 
     @staticmethod
