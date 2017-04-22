@@ -1,9 +1,10 @@
-
+{% extends "base-bulma.html" %}
+{% block content %}
 <section>
 <div class="columns">
 	<div class="column">
-		<h1 class="title">Register</h1>
-		<form id="topSearchForm" action="{{url_for('register')}}", method="post">
+		<h1 class="title">Login</h1>
+		<form id="topSearchForm" action="{{url_for('login')}}", method="post">
 			<div class="columns">
 				<div class="column">
 					<div class="field">
@@ -31,3 +32,4 @@
 	</div>
 </div>
 </section>
+{% endblock %}

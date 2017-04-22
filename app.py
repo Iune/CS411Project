@@ -19,6 +19,7 @@ mysql = MySQL(app)
 # Login Configuration
 login_manager = LoginManager()
 login_manager.init_app(app)
+login_manager.login_view = "login"
 
 class User(UserMixin):
     def __init__ (self, name, password):
@@ -47,7 +48,6 @@ class User(UserMixin):
 @app.route('/')
 def index():
     cursor = mysql.connection.cursor()
-    
     cursor.execute("SELECT * FROM Building")
     buildings  = list(cursor.fetchall())
     buildings_data = []
@@ -86,6 +86,31 @@ def register():
     user = User(user_name, password)
     User.save_user(user)
     return redirect(url_for('index'))
+
+# somewhere to login
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']        
+
+        user = User(username)
+        if user == None:
+            return abort(401)
+        if user.password != password:
+            return abort(401)
+        else:
+            return redirect(request.args.get("next"))
+    return render_template('login-bulma.html', title="Login")
+
+    #     if password == username + "_secret":
+    #         user = User(id)
+    #         login_user(user)
+    #         return redirect(request.args.get("next"))
+    #     else:
+    #         return abort(401)
+    # else:
+    #     return 
 
 @app.route('/add_review', methods=['POST'])
 def add_review():
