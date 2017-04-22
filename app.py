@@ -94,14 +94,15 @@ def login():
         username = request.form['username']
         password = request.form['password']        
 
-        user = User(username)
-        if user == None:
-            return abort(401)
-        if user.password != password:
-            return abort(401)
-        else:
-            return redirect(url_for('index'))
-    return render_template('login-bulma.html', title="Login")
+        # user = User(username)
+        # if user == None:
+        #     return abort(401)
+        # if user.password != password:
+        #     return abort(401)
+        # else:
+        return redirect(url_for('index'))
+    else:
+        return render_template('login-bulma.html', title="Login")
 
     #     if password == username + "_secret":
     #         user = User(id)
