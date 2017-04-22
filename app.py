@@ -100,7 +100,7 @@ def login():
         if user.password != password:
             return abort(401)
         else:
-            return redirect(request.args.get("next"))
+            return redirect(url_for('index'))
     return render_template('login-bulma.html', title="Login")
 
     #     if password == username + "_secret":
