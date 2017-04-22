@@ -76,7 +76,7 @@ def search():
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
-    return render_template('login-bulma.html', title="Sign Up")
+    return render_template('register-bulma.html', title="Sign Up")
 
 @app.route('/register', methods=['POST'])
 def register():
