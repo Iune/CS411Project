@@ -218,6 +218,7 @@
 				{{ review['text'] }}
 				{% if review['tags']|length != 0 %}
 				<br/>
+				{{review['tags']}}
 				{% for tag in review['tags'] %}
 				<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
 				{% endfor %}
