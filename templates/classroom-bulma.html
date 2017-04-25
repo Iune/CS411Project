@@ -40,6 +40,8 @@
 		</div>
 	</div>
 </section>
+<br/>
+
 <section>
 	<div class="container">
 	<h3 class="title">What Are People Saying?</h3>
@@ -325,4 +327,13 @@
 	{% endfor %}
 </section>
 <br/>
+<script>
+list = [];
+for (var i in db) {
+  list.push([words[i]["word"], words[i]["freq"]])
+}
+
+WordCloud.minFontSize = "15px"
+WordCloud(document.getElementById('word_cloud'), { list: list, color: 'blue',
+</script>
 {% endblock %}

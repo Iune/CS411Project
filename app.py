@@ -215,13 +215,11 @@ def room(building, classname):
         tokens = review['text'].split(" ")
         for word in tokens:
             try:
-                words[word]['count'] += 1
+                words[word]['freq'] += 1
             except KeyError:
                 sentiment = sid.polarity_scores(word)['compound']
-                sentiment_type = "positive"
-                if sentiment < 0:
-                    sentiment_type = "negative"
-                words[word] = {'count': 1, 'sentiment': sentiment_type }
+                words[word] = {'freq': 1, "word": word}
+    words = words.values()
 
     return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
 
