@@ -122,6 +122,7 @@ def add_review():
     user_name = request.form['userNameText']
     rating = request.form['ratingSelectInput']
     review_text = request.form['reviewText']
+    tags = request.form.getlist('tags')
 
     ts = time.time()
     timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
