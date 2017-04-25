@@ -337,6 +337,7 @@ $(document).ready(function() {
 	for (var i in list) {
 	  wordList.push([list[i]["word"], list[i]["freq"]])
 	}
+	console.log(list);
 
 	WordCloud.minFontSize = "15px"
 	WordCloud(document.getElementById('word_cloud'), { list: wordList, color: 'blue'})
