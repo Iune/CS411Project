@@ -22,9 +22,9 @@
 				<div class="panel-block">
 					<p><b>Address:</b> {{ classroom['buildingAddress'] }}</p>
 				</div>
-				<!-- <div class="panel-block">
+				<div class="panel-block">
 					<p><b>Average Rating:</b> {{ classroom['averageRating'] }}</p>
-				</div> -->
+				</div>
 			</nav>
 		</div>
 		<div class="column">
@@ -213,7 +213,7 @@
 			<p>
 				<strong>{{ review['userName'] }}</strong> <small>at {{ review['time'] }}</small>
 				<br/>
-				{{ review['ratingStars'] }}
+				{{ review['text'] }}
 				<br/>
 				{% if review['tags']|length != 0 %}
 				<br/>
