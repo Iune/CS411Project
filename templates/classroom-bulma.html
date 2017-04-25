@@ -327,7 +327,13 @@
 	{% endfor %}
 </section>
 <br/>
+<input type="hidden" id="sentiments" value="{{sentiments}}">
 <script>
+$(document).ready(function() {
+	list = $('#sentiments');
+	console.log(list);
+});
+
 list = [];
 for (var i in words) {
   list.push([words[i]["word"], words[i]["freq"]])
