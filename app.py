@@ -7,8 +7,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import time
 import datetime
 
+# App Configuration
 app = Flask(__name__)
-app.secret_key = 'some secret key'
+app.secret_key = '&~\xcb\xa1 \xc35d\x00m7\xacc\xe9A\xb5N\xdb\x0b\n8\x9b"\xa4'
+
 # MySQL Configurations
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'c$411Pr0J'
@@ -127,6 +129,11 @@ def add_review():
     cursor = mysql.connection.cursor()  
     cursor.execute("INSERT INTO Review (Rating, DateTime, Text, UserName, ClassroomNumber, BldgName) VALUES (%s, %s, %s, %s, %s, %s)", (rating, timestamp, review_text, user_name, room_number, building_name))  
     mysql.connection.commit()
+
+    # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
+    # average_rating = cursor.fetchall()[0]
+    # cursor.execute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND ClassroomNumber = %s", (average_rating, building_name, room_number))
+
     return redirect(url_for('room', building=building_name, classname=room_number))
 
 @app.route('/handle_review', methods=['POST'])
@@ -169,9 +176,9 @@ def room(building, classname):
         'averageRating': classroom[3],
         'tags' : []
     }
-    # for classroom in classrooms:
-    #     if(classroom[4])
-    #         classroom_data['tags'].append(classroom[4])
+    for classroom in classrooms:
+        if(classroom[4])
+            classroom_data['tags'].append(classroom[4])
     # Load reviews
     cursor.execute("SELECT * FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, classname)) 
     reviews_list = cursor.fetchall()
