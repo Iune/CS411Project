@@ -31,11 +31,10 @@
 			<nav class="panel">
 				<p class="panel-heading">Tags</p>
 				<div class="panel-block">
-					{{classroom['tags']}}
-					<p>{% if classroom['tags']|length == 0 %} <i>No tags</i> {% endif %}
+					{% if classroom['tags']|length == 0 %} <p><i>No tags</i></p> {% endif %}
 						{% for tag in classroom['tags'] %}
-						<span class="tag is-primary is-medium">{{tag}}</span>&nbsp;
-						{% endfor %}</p>
+						<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
+						{% endfor %}
 					}
 				</div>
 			</nav>
