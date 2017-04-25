@@ -334,7 +334,7 @@ $(document).ready(function() {
 	console.log(list);
 
 	wordList = [];
-	for (var i in list) {
+	for (var i in list.length()) {
 	  wordList.push([list[i]["word"], list[i]["freq"]]);
 	}
 	console.log(wordList);
