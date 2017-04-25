@@ -213,8 +213,9 @@
 			<p>
 				<strong>{{ review['userName'] }}</strong> <small>at {{ review['time'] }}</small>
 				<br/>
-				{{ review['text'] }}
+				{{ review['rating'] }}
 				<br/>
+				{{ review['text'] }}
 				{% if review['tags']|length != 0 %}
 				<br/>
 				{% for tag in review['tags'] %}
