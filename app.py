@@ -214,6 +214,7 @@ def room(building, classname):
     for review in reviews:
         tokens = review['text'].replace(",", "").replace(".", "").split(" ")
         for word in tokens:
+            word = word.lower()
             try:
                 words[word]['freq'] += 1
             except KeyError:
