@@ -139,7 +139,7 @@ def add_review():
     cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
     average_rating = cursor.fetchall()[0][0]
     print(average_rating)
-    cursor.execute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
+    cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
