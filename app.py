@@ -212,7 +212,7 @@ def room(building, classname):
     words = {}
     sid = SentimentIntensityAnalyzer()
     for review in reviews:
-        tokens = review['text'].split(" ")
+        tokens = review['text'].replace(",", "").replace(".", "").split(" ")
         for word in tokens:
             try:
                 words[word]['freq'] += 1
