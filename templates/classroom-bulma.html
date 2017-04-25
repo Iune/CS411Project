@@ -333,13 +333,13 @@ $(document).ready(function() {
 	list = $('#sentiments').val();
 	console.log(list);
 
-	list = [];
-	for (var i in words) {
+	wordList = [];
+	for (var i in list) {
 	  list.push([words[i]["word"], words[i]["freq"]])
 	}
 
 	WordCloud.minFontSize = "15px"
-	WordCloud(document.getElementById('word_cloud'), { list: list, color: 'blue'})
+	WordCloud(document.getElementById('word_cloud'), { list: wordList, color: 'blue'})
 });
 </script>
 {% endblock %}
