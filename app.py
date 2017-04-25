@@ -133,6 +133,7 @@ def add_review():
 
     for tag in tags:
         cursor.execute("INSERT INTO TagsInReview (DateTime, Username, TagName) VALUES (%s, %s, %s)", (timestamp, user_name, tag))
+        mysql.connection.commit()
 
     # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
     # average_rating = cursor.fetchall()[0]
