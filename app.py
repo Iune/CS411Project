@@ -182,9 +182,9 @@ def room(building, classname):
         'tags' : []
     }
 
-    # for classroom in classrooms:
-    #     if(classroom[4])
-    #         classroom_data['tags'].append(classroom[4])
+    # Get the Classroom Tags
+    classroom_tags = []
+
     # Load reviews
     cursor.execute("SELECT * FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, classname)) 
     reviews_list = cursor.fetchall()
@@ -193,6 +193,7 @@ def room(building, classname):
         tags = []
         cursor.execute("SELECT TagName FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
         tags_list = cursor.fetchall()
+        tags_list = [tag[0] for tag in tags_list]
         reviews.append({
             'userName': review[3],
             'text': review[2],
@@ -201,7 +202,10 @@ def room(building, classname):
             'tags': tags_list,
             'time': review[1]
         })
-    # tags = cursor.execute("SELECT TagName From TagsInReview WHERE DateTime = %s AND Username = %s", ())
+        for tag in tags
+            classroom_tags.append(tag)
+    classroom_tags = list(set(classroom_tags))
+    classroom_data['tags'] = classroom_tags
 
     words = {}
     sid = SentimentIntensityAnalyzer()
