@@ -202,7 +202,7 @@ def room(building, classname):
             'tags': tags_list,
             'time': review[1]
         })
-        for tag in tags
+        for tag in tags:
             classroom_tags.append(tag)
     classroom_tags = list(set(classroom_tags))
     classroom_data['tags'] = classroom_tags
