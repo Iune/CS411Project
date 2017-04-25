@@ -180,6 +180,7 @@ def room(building, classname):
         'averageRating': classroom[3],
         'tags' : []
     }
+
     # for classroom in classrooms:
     #     if(classroom[4])
     #         classroom_data['tags'].append(classroom[4])
@@ -189,7 +190,7 @@ def room(building, classname):
     reviews = []
     for review in reviews_list:
         tags = []
-        cursor.execute("SELECT * FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
+        cursor.execute("SELECT TagName FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
         tags_list = cursor.fetchall()
         reviews.append({
             'userName': review[3],
@@ -199,6 +200,7 @@ def room(building, classname):
             'tags': tags_list,
             'time': review[1]
         })
+    # tags = cursor.execute("SELECT TagName From TagsInReview WHERE DateTime = %s AND Username = %s", ())
 
     words = {}
     sid = SentimentIntensityAnalyzer()
