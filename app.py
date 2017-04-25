@@ -135,9 +135,10 @@ def add_review():
         cursor.execute("INSERT INTO TagsInReview (DateTime, Username, TagName) VALUES (%s, %s, %s)", (timestamp, user_name, tag))
         mysql.connection.commit()
 
-    # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
-    # average_rating = cursor.fetchall()[0]
-    # cursor.exdiecute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND ClassroomNumber = %s", (average_rating, building_name, room_number))
+    # Update Average Classroom Rating
+    cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
+    average_rating = cursor.fetchall()[0]
+    cursor.exdiecute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND ClassroomNumber = %s", (average_rating, building_name, room_number))
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
@@ -207,6 +208,7 @@ def room(building, classname):
     classroom_tags = list(set(classroom_tags))
     classroom_data['tags'] = classroom_tags
 
+    # Get Word Sentiments for Word Cloud
     words = {}
     sid = SentimentIntensityAnalyzer()
     for review in reviews:
