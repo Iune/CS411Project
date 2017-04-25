@@ -132,7 +132,7 @@ def add_review():
 
     # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
     # average_rating = cursor.fetchall()[0]
-    # cursor.execute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND ClassroomNumber = %s", (average_rating, building_name, room_number))
+    # cursor.exdiecute("UPDATE Classroom SET Rating = %s WHERE BldgName = %s AND ClassroomNumber = %s", (average_rating, building_name, room_number))
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
@@ -176,9 +176,9 @@ def room(building, classname):
         'averageRating': classroom[3],
         'tags' : []
     }
-    for classroom in classrooms:
-        if(classroom[4])
-            classroom_data['tags'].append(classroom[4])
+    # for classroom in classrooms:
+    #     if(classroom[4])
+    #         classroom_data['tags'].append(classroom[4])
     # Load reviews
     cursor.execute("SELECT * FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, classname)) 
     reviews_list = cursor.fetchall()
