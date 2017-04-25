@@ -219,7 +219,7 @@ def room(building, classname):
             except KeyError:
                 sentiment = sid.polarity_scores(word)['compound']
                 words[word] = {'freq': 1, "word": word}
-    words = list(words.values())
+    words = [[word['freq'], word['word'] for word in words.values()]]
 
     return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
 
