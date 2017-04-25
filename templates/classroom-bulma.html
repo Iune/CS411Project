@@ -216,9 +216,9 @@
 				{{ review['ratingStars'] }}
 				<br/>
 				{{ review['text'] }}
+				<p>{{review['tags']}}</p>
 				{% if review['tags']|length != 0 %}
 				<br/>
-				<p>{{review['tags']}}</p>
 				{% for tag in review['tags'] %}
 				<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
 				{% endfor %}
