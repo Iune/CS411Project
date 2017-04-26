@@ -70,14 +70,12 @@
 				</div>
 				<div class="column">
 					<div class="field">
-						<label class="label">Classroom</label>
+						<label class="label">Travel Method</label>
 						<p class="control">
 							<span class="select">
-								<select name="classroomNameInput" id="classroomName">
-									<option class="selection" value="">Select Classroom</option>
-									{% for classroom in classrooms %}
-									<option class="{{classroom['buildingClassName']}}" value="{{classroom['roomNumber']}}">{{classroom['roomNumber']}} – {{classroom['buildingName']}}</option>
-									{% endfor %}
+								<select name="travelMethod" id="walkingMethod">
+									<option class="selection" value="walking">Walking</option>
+									<option class="selection" value="biking">Biking</option>
 								</select>
 							</span>
 						</p>
