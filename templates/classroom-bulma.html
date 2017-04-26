@@ -330,11 +330,12 @@
 <input type="hidden" id="sentiments" value="{{sentiments}}">
 <script>
 $(document).ready(function() {
-	list = $('#sentiments').val();
-	console.log(list);
+	sentiments = $('#sentiments').val();
+	console.log(Array.from("sentiments"));
+	console.log(sentiments);
 
 	newList = [];
-	for(var i = 0; i < list.length; i++) {
+	for(var i = 0; i < sentiments.length; i++) {
 		console.log([list[i][0], list[i][1]]);
 		newList.push([list[i][0], list[i][1]]);
 	}
