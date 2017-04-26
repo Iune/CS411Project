@@ -84,6 +84,10 @@ def search():
     classroom_name = request.form['classroomNameInput']
     return redirect(url_for('room', building=building_name, classname=classroom_name))
 
+@app.route('/search_keys', methods=['POST'])
+def search_keys():
+    return "Hello World"
+
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
     return render_template('register-bulma.html', title="Sign Up")
