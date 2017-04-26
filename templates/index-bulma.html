@@ -46,6 +46,173 @@
 	</div>
 </div>
 </section>
+<br/>
+
+<section>
+<div class="columns">
+	<div class="column">
+		<form id="nextSearchForm" action="{{url_for('search_keys')}}", method="post">
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<label class="label">Building Name</label>
+						<p class="control">
+							<span class="select">
+								<select name="buildingNameInput" id="buildingName">
+									<option class="selection" value="">Select Building</option>
+									{% for building in buildings %}
+									<option class="{{building['className']}}" value="{{building['name']}}">{{building['name']}}</option>
+									{% endfor %}
+								</select>
+							</span>
+						</p>
+					</div>				
+				</div>
+				<div class="column">
+					<div class="field">
+						<label class="label">Classroom</label>
+						<p class="control">
+							<span class="select">
+								<select name="classroomNameInput" id="classroomName">
+									<option class="selection" value="">Select Classroom</option>
+									{% for classroom in classrooms %}
+									<option class="{{classroom['buildingClassName']}}" value="{{classroom['roomNumber']}}">{{classroom['roomNumber']}} – {{classroom['buildingName']}}</option>
+									{% endfor %}
+								</select>
+							</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="columns">
+				<div class="column">
+					<div class="field">
+						<label class="label">Tags</label>
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Air Conditioned" type="checkbox">
+  							Air Conditioned
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Cold in the Winter" type="checkbox">
+  							Cold in the Winter
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Left-Handed Desks" type="checkbox">
+  							Left-Handed Desks
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Good Legroom" type="checkbox">
+  							Good Legroom
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="No Legroom" type="checkbox">
+  							No Legroom
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Comfy Seating" type="checkbox">
+  							Comfy Seating
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Hard to Find" type="checkbox">
+  							Hard to Find
+      						</label>
+						</p>
+					</div>
+				</div>
+				<div class="column">
+					<div class="field">
+						<label class="label">&nbsp;</label>
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Small Desk Space" type="checkbox">
+  							Small Desk Space
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Large Desk Space" type="checkbox">
+  							Large Desk Space
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Steep Seating" type="checkbox">
+  							Steep Seating
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Run Down" type="checkbox">
+  							Run Down
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Whiteboards" type="checkbox">
+  							Whiteboards
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Chalkboards" type="checkbox">
+  							Chalkboards
+      						</label>
+						</p>
+					</div>
+					<div class="field">
+						<p class="control">
+							<label class="checkbox">
+  							<input name="tags" value="Lecturer Computer" type="checkbox">
+  							Lecturer Computer
+      						</label>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="field">
+				<p class="control">
+					<button class="button">Search</button>
+				</p>
+			</div>
+		</form>
+	</div>
+</div>
+</section>
 <script type="text/javascript">
 $(document).ready(function() {
 	var allOptions = $('#classroomName option')
