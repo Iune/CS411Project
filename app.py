@@ -9,6 +9,7 @@ from nltk.corpus import stopwords
 from colour import Color
 import time
 import datetime
+import nltk
 
 # App Configuration
 app = Flask(__name__)
