@@ -125,7 +125,7 @@ def search_keys():
                 'tags': set([tag[2]])
             }
 
-    classes_list = classes.values()
+    classes_list = list(classes.values())
     for tag in search_tags:
         for room in classes_list:
             if tag in room['tags']:
