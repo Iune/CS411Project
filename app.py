@@ -102,8 +102,11 @@ def search_keys():
     for time in travel_times:
         close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
 
+    cursor.execute("SELECT * FROM Classroom WHERE BldgName = %s", (building_name,))  
+    classrooms = cursor.fetchall()    
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings)
+
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings, classrooms=classrooms)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
