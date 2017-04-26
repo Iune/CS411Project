@@ -129,7 +129,7 @@ def search_keys():
         new_classes = {}
         for room in classes.keys():
             if tag in classes[room]['tags']:
-                new_classes[room] = classes['room']
+                new_classes[room] = classes[room]
             else:
                 continue
         classes = new_classes
