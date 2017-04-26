@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import jsonify, render_template, abort, request, redirect, url_for
+from flask import jsonify, render_template, abort, request, redirect, url_for, jsonify
 from flask_mysqldb import MySQL
 from flask_login import LoginManager, UserMixin, \
                                 login_required, login_user, logout_user 
@@ -91,8 +91,8 @@ def search_keys():
     travel_time = request.form['travelTime']
     tags = request.form.getlist('tags')
 
-    return { 'name': building_name, 'method': travel_method, 'time': travel_time, 'tags': tags}
-
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags)
+    
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
     return render_template('register-bulma.html', title="Sign Up")
