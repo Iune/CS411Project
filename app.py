@@ -219,11 +219,11 @@ def room(building, classname):
         num_words += len(tokens)
         for word in tokens:
             word = word.lower()
+            sentiment = sid.polarity_scores(word)['compound']
+            sentiments.append(sentiment)
             try:
                 words[word]['freq'] += 10
             except KeyError:
-                sentiment = sid.polarity_scores(word)['compound']
-                sentiments.append(sentiment)
                 words[word] = {'freq': 10, "word": word}
 
     avg_rating = 0.5 + (float(sum(sentiments)/num_words)/2.0)
