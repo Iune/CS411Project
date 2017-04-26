@@ -333,7 +333,7 @@ $(document).ready(function() {
 	color = "{{color}}";
 	console.log(color)
 	WordCloud.minFontSize = "24px"
-	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: color});
+	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: color, backgroundColor: "black"});
 });
 </script>
 {% endblock %}
