@@ -10,7 +10,7 @@
 		<p class="panel-heading">Results</p>
 		{% for room in rooms %}
 		<div class="panel-block">
-			<a href="">{{ room['roomNumber'] }} {{ room['buildingName'] }}</a>
+			<a href="/room/{{room['building']}}/{{room['room']}}">{{ room['room'] }} {{ room['building'] }}</a>
 		</div>
 		{% endfor %}
 	</nav>
