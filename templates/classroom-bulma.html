@@ -33,7 +33,7 @@
 				<div class="panel-block">
 					{% if classroom['tags']|length == 0 %} <p><i>No tags</i></p> {% endif %}
 						{% for tag in classroom['tags'] %}
-						<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
+						<span class="tag is-primary is-small">{{tag}}</span>&#32;
 						{% endfor %}
 				</div>
 			</nav>
@@ -228,7 +228,7 @@
 				{% if review['tags']|length != 0 %}
 				<br/>
 				{% for tag in review['tags'] %}
-				<span class="tag is-primary is-small">{{tag}}</span>&nbsp;
+				<span class="tag is-primary is-small">{{tag}}</span>&#32;
 				{% endfor %}
 				{% endif %}
 			</p>
