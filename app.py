@@ -117,7 +117,7 @@ def search_keys():
         room = tag[4]
 
         try:
-            tags["{} {}".format(room, building)]['tags'].append(tag[2])
+            tags["{} {}".format(room, building)]['tags'].add(tag[2])
         except KeyError:
             tags["{} {}".format(room, building)] = {
                 'building': building,
