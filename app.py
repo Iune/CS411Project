@@ -126,7 +126,7 @@ def search_keys():
             }
 
     for tag in search_tags:
-        for building in classes.keys():
+        for building in list(classes.keys()):
             if tag in classes[building]['tags']:
                 continue
             else:
