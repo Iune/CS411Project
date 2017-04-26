@@ -331,7 +331,7 @@
 $(document).ready(function() {
 	sentiments = {{sentiments|tojson}};
 	color = "{{color}}";
-	WordCloud(document.getElementById('word_cloud'), { fontFamily: "Helvetica Neue", list: sentiments, color: color, backgroundColor: "black", size: 12});
+	WordCloud(document.getElementById('word_cloud'), { fontFamily: "Helvetica Neue", list: sentiments, color: color, size: 12});
 });
 </script>
 {% endblock %}
