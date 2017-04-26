@@ -338,7 +338,10 @@ $(document).ready(function() {
 		newList.push([list[i][0], list[i][1]]);
 	}
 
-	// list = [['recommend', 10], ['to', 20], ['know!', 10], ['again', 10], ['place', 30], ['everyone', 10], ['is', 10], ['would', 10], ['ever', 10], ['best', 10], ['believe', 10], ['placeholder', 10], ['been', 10], ['have', 10], ['it', 10], ["can't", 10], ['the', 10], ['i', 40], ['highly', 10], ['exists!', 10], ['this', 20]];
+	console.log(newList);
+
+	list = [['recommend', 10], ['to', 20], ['know!', 10], ['again', 10], ['place', 30], ['everyone', 10], ['is', 10], ['would', 10], ['ever', 10], ['best', 10], ['believe', 10], ['placeholder', 10], ['been', 10], ['have', 10], ['it', 10], ["can't", 10], ['the', 10], ['i', 40], ['highly', 10], ['exists!', 10], ['this', 20]];
+	console.log(list);
 
 	// wordList = [];
 	// for (var i in list.length) {
@@ -347,7 +350,7 @@ $(document).ready(function() {
 	// console.log(wordList);
 
 	WordCloud.minFontSize = "15px"
-	WordCloud(document.getElementById('word_cloud'), { list: newList, color: 'blue'});
+	WordCloud(document.getElementById('word_cloud'), { list: list, color: 'blue'});
 });
 </script>
 {% endblock %}
