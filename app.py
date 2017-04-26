@@ -92,14 +92,20 @@ def search_keys():
     tags = request.form.getlist('tags')
 
     cursor = mysql.connection.cursor()  
-    cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s", (building_name,))  
-    travel_times_temp = cursor.fetchall()
-    travel_times = {}
-    for time in travel_times:
-        travel_times[time[1]] = {'building': time[1], 'walk': time[2], 'bike': time[3]}
+    if travel_method == "walking":
+        cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s", (building_name, travel_times))  
+    else:
+        cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_times))  
+
+    travel_times = cursor.fetchall()
+    close_buildings = []
+    for building in travel_times:
+        if travel_method == "walking":
+            close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
+            # travel_times[time[1]] = 
 
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=travel_times_temp)
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
