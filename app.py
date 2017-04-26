@@ -134,6 +134,8 @@ def search_keys():
                 continue
         classes = new_classes
 
+    for room in classes:
+        room['tags'] = list(room['tags'])
     # for tag in classes:
     #     classes['tags'] = list(tag['tags'])
 
