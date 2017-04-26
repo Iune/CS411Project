@@ -100,10 +100,13 @@ def search_keys():
     travel_times = cursor.fetchall()
     close_buildings = []
     for time in travel_times:
-        close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
+        close_buildings.append(time[1])
 
-    cursor.execute("SELECT * FROM Classroom WHERE BldgName = (SELECT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s)", (building_name, travel_time))  
-    classrooms = cursor.fetchall()    
+    classrooms = []
+    for building in close_buildings:
+        cursor.execute("SELECT * FROM Classroom WHERE BldgName = %s", (building,))  
+        building_rooms = cursor.fetchall() 
+        classrooms += [building for building in building_rooms]   
 
 
     return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings, classrooms=classrooms)
