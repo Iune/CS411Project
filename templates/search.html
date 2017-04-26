@@ -1,10 +1,18 @@
 {% extends "base-bulma.html" %}
 {% block content %}
-<section>
 <section class"hero">
 	<div class="hero-body">
 		<div class="container"><h1 class="title">{{ title }}</h1></div>
 	</div>
 </section>
+<section>
+	<nav class="panel">
+		<p class="panel-heading">Results</p>
+		{% for room in rooms %}
+		<div class="panel-block">
+			<a href="">{{ room['roomNumber'] }} {{ room['buildingName'] }}</a>
+		</div>
+		{% endfor %}
+	</nav>
 </section>
 {% endblock %}

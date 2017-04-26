@@ -138,7 +138,6 @@ def search_keys():
         classes = new_classes
     classes = list(classes.values())
     return render_template('search.html', title="Search", rooms=classes)
-    # return jsonify(name=building_name, method=travel_method, time=travel_time, tags=classes)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
