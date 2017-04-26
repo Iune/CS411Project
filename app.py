@@ -97,7 +97,7 @@ def search_keys():
     else:
         cursor.execute("SELECT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_time))  
 
-    close_buildings = cursor.fetchall()
+    close_buildings = [building[0] for building in cursor.fetchall()]
     # for time in travel_times:
     #     close_buildings.append(time[1])
 
