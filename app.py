@@ -221,7 +221,7 @@ def handle_review():
         building = request.form['reviewBuilding']
         classroom = request.form['reviewClassroom']
         cursor.execute("DELETE FROM Review WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (user_name, building, classroom))
-        cursor.execute("DELETE FROM Tags WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (user_name, building, classroom))
+        cursor.execute("DELETE FROM Tags WHERE UserName = %s AND BldgName = %s AND RoomNumber = %s", (user_name, building, classroom))
         mysql.connection.commit()
         
         Database.update_classroom_rating(building_name, room_number)
