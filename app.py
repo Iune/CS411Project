@@ -212,7 +212,7 @@ def room(building, classname):
     words = {}
     sid = SentimentIntensityAnalyzer()
     for review in reviews:
-        tokens = review['text'].replace(",", "").replace(".", "").split(" ")
+        tokens = review['text'].replace(",", "").replace(".", "").replace("!", "").split(" ")
         for word in tokens:
             word = word.lower()
             try:
@@ -220,7 +220,7 @@ def room(building, classname):
             except KeyError:
                 sentiment = sid.polarity_scores(word)['compound']
                 words[word] = {'freq': 10, "word": word}
-                
+
     words = [[word['word'], word['freq']] for word in words.values()]
 
     return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
