@@ -92,7 +92,7 @@ def search_keys():
     tags = request.form.getlist('tags')
 
     cursor = mysql.connection.cursor()  
-    cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s", (building_name))  
+    cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s", (building_name,))  
     travel_times_temp = cursor.fetchall()
     travel_times = {}
     for time in travel_times:
