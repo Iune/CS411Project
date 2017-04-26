@@ -125,6 +125,9 @@ def search_keys():
                 'tags': set(tag[2])
             }
 
+    for tag in tags_list.values():
+        tag['tags'] = list(tag['tags'])
+
     classrooms = []
     for building in close_buildings:
         cursor.execute("SELECT DISTINCT RoomNumber FROM Classroom WHERE BldgName = %s", (building,))  
