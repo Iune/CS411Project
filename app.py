@@ -216,11 +216,12 @@ def room(building, classname):
         for word in tokens:
             word = word.lower()
             try:
-                words[word]['freq'] += 1
+                words[word]['freq'] += 10
             except KeyError:
                 sentiment = sid.polarity_scores(word)['compound']
-                words[word] = {'freq': 1, "word": word}
-    words = [[word['word'], word['freq']*10] for word in words.values()]
+                words[word] = {'freq': 10, "word": word}
+                
+    words = [[word['word'], word['freq']] for word in words.values()]
 
     return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
 
