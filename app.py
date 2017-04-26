@@ -102,9 +102,9 @@ def search_keys():
 
     cursor = mysql.connection.cursor()  
     if travel_method == "walking":
-        cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %d", (building_name, travel_time))  
+        cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s", (building_name, travel_time))  
     else:
-        cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %d", (building_name, travel_time))  
+        cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_time))  
 
     close_buildings = [building[0] for building in cursor.fetchall()]
 
