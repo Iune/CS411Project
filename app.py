@@ -128,10 +128,10 @@ def search_keys():
     for tag in search_tags:
         temp_classes = classes.copy()
         for building in classes.keys():
-            if tag in classes['building']['tags']:
+            if tag in classes[building]['tags']:
                 continue
             else:
-                del temp_classes['building']
+                del temp_classes[building]
         classes = temp_classes
 
     for tag in buildings.values():
