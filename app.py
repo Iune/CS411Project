@@ -91,8 +91,16 @@ def search_keys():
     travel_time = request.form['travelTime']
     tags = request.form.getlist('tags')
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags)
-    
+    cursor = mysql.connection.cursor()  
+    cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s", (building_name))  
+    travel_times_temp = cursor.fetchall()
+    travel_times = {}
+    for time in travel_times:
+        travel_times[time[1]] = {'building': time[1], 'walk': time[2], 'bike': time[3]}
+
+
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=travel_times)
+
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
     return render_template('register-bulma.html', title="Sign Up")
