@@ -7,6 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from colour import Color
+from database import Database
 import time
 import datetime
 import nltk
@@ -166,10 +167,11 @@ def add_review():
         mysql.connection.commit()
 
     # Update Average Classroom Rating
-    cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
-    average_rating = cursor.fetchall()[0][0]
-    cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
-    mysql.connection.commit()
+    Database.update_classroom_rating(building_name, room_number)
+    # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
+    # average_rating = cursor.fetchall()[0][0]
+    # cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
+    # mysql.connection.commit()
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
