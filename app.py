@@ -134,7 +134,7 @@ def search_keys():
                 del temp_classes[building]
         classes = temp_classes
 
-    for tag in buildings.values():
+    for tag in classes.values():
         classes['tags'] = list(tag['tags'])
 
 
