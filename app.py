@@ -99,10 +99,8 @@ def search_keys():
 
     travel_times = cursor.fetchall()
     close_buildings = []
-    for building in travel_times:
-        if travel_method == "walking":
-            close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
-            # travel_times[time[1]] = 
+    for time in travel_times:
+        close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
 
 
     return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings)
