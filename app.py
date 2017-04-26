@@ -98,7 +98,7 @@ def search_keys():
     building_name = request.form['buildingNameInput']
     travel_method = request.form['travelMethod']
     travel_time = request.form['travelTime']
-    tags = request.form.getlist('tags')
+    search_tags = request.form.getlist('tags')
 
     cursor = mysql.connection.cursor()  
     if travel_method == "walking":
@@ -107,8 +107,23 @@ def search_keys():
         cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_time))  
 
     close_buildings = [building[0] for building in cursor.fetchall()]
-    # for time in travel_times:
-    #     close_buildings.append(time[1])
+
+    cursor.execute("SELECT * FROM Tags")
+    tags_list = cursor.fetchall()
+
+    tags = {}
+    for tag in tags_list:
+        building = tag[3]
+        room = tag[4]
+
+        try:
+            tags["{} {}".format(room, building)]['tags'].append(tag[2])
+        except KeyError:
+            tags["{} {}".format(room, building)] = {
+                'building': building,
+                'room': room,
+                'tags': [tag[2]]
+            }
 
     classrooms = []
     for building in close_buildings:
@@ -176,10 +191,6 @@ def add_review():
 
     # Update Average Classroom Rating
     Database.update_classroom_rating(building_name, room_number)
-    # cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
-    # average_rating = cursor.fetchall()[0][0]
-    # cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
-    # mysql.connection.commit()
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
@@ -197,6 +208,7 @@ def handle_review():
         cursor.execute("UPDATE Review SET Text = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (review_text, user_name, building, classroom))
         mysql.connection.commit()
 
+        Database.update_classroom_rating(building_name, room_number)
         return redirect(url_for("room", building=building, classname=classroom))
         
     elif request.form['submit'] == 'delete':
@@ -205,6 +217,8 @@ def handle_review():
         classroom = request.form['reviewClassroom']
         cursor.execute("DELETE FROM Review WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (user_name, building, classroom))
         mysql.connection.commit()
+        
+        Database.update_classroom_rating(building_name, room_number)
         return redirect(url_for("room", building=building, classname=classroom))
     else:
         return 'Do nothing'
