@@ -145,7 +145,7 @@ def search_keys():
         classrooms += [{'building': building, 'room': room[0]} for room in building_rooms]  
 
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=buildings, distances=close_buildings, classrooms=classrooms)
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=classes, distances=close_buildings, classrooms=classrooms)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
