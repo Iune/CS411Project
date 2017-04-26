@@ -7,7 +7,6 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from colour import Color
-from app.database import Database
 import time
 import datetime
 import nltk
@@ -27,6 +26,14 @@ mysql = MySQL(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
+
+class Database:
+    @staticmethod
+    def update_classroom_rating(building, room):
+        cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, room))
+        average_rating = cursor.fetchall()[0][0]
+        cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building, room))
+        mysql.connection.commit()
 
 class User(UserMixin):
     def __init__ (self, name, password):
