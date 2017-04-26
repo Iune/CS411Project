@@ -137,13 +137,13 @@ def search_keys():
                 continue
         classes = new_classes
 
-    # new_classes = {}
-    # for room in classes.keys():
-    #     if classes[room]['building'] in close_buildings:
-    #         new_classes[room] = classes[room]
-    #     else:
-    #         continue
-    # classes = new_classes
+    new_classes = {}
+    for room in classes.keys():
+        if classes[room]['building'] in close_buildings:
+            new_classes[room] = classes[room]
+        else:
+            continue
+    classes = new_classes
 
     classes = list(classes.values())
     return render_template('search.html', title="Search", rooms=classes, test=close_buildings)
