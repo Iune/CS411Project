@@ -30,6 +30,7 @@ login_manager.login_view = "login"
 class Database:
     @staticmethod
     def update_classroom_rating(building, room):
+        cursor = mysql.connection.cursor()  
         cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building, room))
         average_rating = cursor.fetchall()[0][0]
         cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building, room))
