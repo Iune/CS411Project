@@ -162,7 +162,7 @@ def add_review():
     mysql.connection.commit()
 
     for tag in tags:
-        cursor.execute("INSERT INTO Tags (DateTime, Username, TagName, BldgName, RoomNumber) VALUES (%s, %s, %s)", (timestamp, user_name, tag, building_name, room_number))
+        cursor.execute("INSERT INTO Tags (DateTime, Username, TagName, BldgName, RoomNumber) VALUES (%s, %s, %s, %s, %s)", (timestamp, user_name, tag, building_name, room_number))
         mysql.connection.commit()
 
     # Update Average Classroom Rating
