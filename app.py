@@ -103,7 +103,7 @@ def search_keys():
 
     classrooms = []
     for building in close_buildings:
-        cursor.execute("SELECT RoomNumber FROM Classroom WHERE BldgName = %s", (building,))  
+        cursor.execute("SELECT DISTINCT RoomNumber FROM Classroom WHERE BldgName = %s", (building,))  
         building_rooms = cursor.fetchall() 
         classrooms += building_rooms  
 
