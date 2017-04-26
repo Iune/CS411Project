@@ -137,15 +137,8 @@ def search_keys():
                 continue
         classes = new_classes
     classes = list(classes.values())
-
-    # classrooms = []
-    # for building in close_buildings:
-    #     cursor.execute("SELECT DISTINCT RoomNumber FROM Classroom WHERE BldgName = %s", (building,))  
-    #     building_rooms = cursor.fetchall() 
-    #     classrooms += [{'building': building, 'room': room[0]} for room in building_rooms]  
-
-
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=classes)
+    return render_template('search.html', title="Search", rooms=classes)
+    # return jsonify(name=building_name, method=travel_method, time=travel_time, tags=classes)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
