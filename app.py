@@ -111,22 +111,32 @@ def search_keys():
     cursor.execute("SELECT * FROM Tags")
     tags_list = cursor.fetchall()
 
-    tags = {}
+    classes = {}
     for tag in tags_list:
         building = tag[3]
         room = tag[4]
 
         try:
-            tags["{} {}".format(room, building)]['tags'].add(tag[2])
+            classes["{} {}".format(room, building)]['tags'].add(tag[2])
         except KeyError:
-            tags["{} {}".format(room, building)] = {
+            classes["{} {}".format(room, building)] = {
                 'building': building,
                 'room': room,
                 'tags': set([tag[2]])
             }
 
-    for tag in tags.values():
-        tag['tags'] = list(tag['tags'])
+    for tag in search_tags:
+        temp_classes = classes.copy()
+        for building in classes.keys():
+            if tag in classes['building']['tags']:
+                continue
+            else:
+                del temp_classes['building']
+        classes = temp_classes
+
+    for tag in buildings.values():
+        buildings['tags'] = list(tag['tags'])
+
 
     classrooms = []
     for building in close_buildings:
@@ -135,7 +145,7 @@ def search_keys():
         classrooms += [{'building': building, 'room': room[0]} for room in building_rooms]  
 
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings, classrooms=classrooms)
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=buildings, distances=close_buildings, classrooms=classrooms)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
