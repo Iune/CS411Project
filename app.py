@@ -299,7 +299,7 @@ def room(building, classname):
             avg_rating = 0
         if avg_rating > 0.6:
             avg_rating = 1
-    color = Color(hue=avg_rating*0.4, saturation=0.9, luminance=0.9).hex
+    color = Color(hue=avg_rating*1, saturation=0.9, luminance=0.9).hex
     words = [[word['word'], word['freq']] for word in words.values()]
 
     return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words, color=color)
