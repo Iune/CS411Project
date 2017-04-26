@@ -216,7 +216,7 @@ def room(building, classname):
     num_words = 0
     for review in reviews:
         tokens = review['text'].replace(",", "").replace(".", "").replace("!", "").split(" ")
-        num_words += tokens
+        num_words += len(tokens)
         for word in tokens:
             word = word.lower()
             try:
