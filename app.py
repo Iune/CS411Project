@@ -93,14 +93,13 @@ def search_keys():
 
     cursor = mysql.connection.cursor()  
     if travel_method == "walking":
-        cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s", (building_name, travel_time))  
+        cursor.execute("SELECT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s", (building_name, travel_time))  
     else:
-        cursor.execute("SELECT * FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_time))  
+        cursor.execute("SELECT SecondBuildingName FROM Travel WHERE FirstBuildingName = %s AND BikeTime <= %s", (building_name, travel_time))  
 
-    travel_times = cursor.fetchall()
-    close_buildings = []
-    for time in travel_times:
-        close_buildings.append(time[1])
+    close_buildings = cursor.fetchall()
+    # for time in travel_times:
+    #     close_buildings.append(time[1])
 
     classrooms = []
     for building in close_buildings:
