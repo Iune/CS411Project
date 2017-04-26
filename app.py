@@ -102,7 +102,7 @@ def search_keys():
     for time in travel_times:
         close_buildings.append({'building': time[1], 'walk': time[2], 'bike': time[3]})
 
-    cursor.execute("SELECT * FROM Classroom WHERE BldgName = %s", (building_name,))  
+    cursor.execute("SELECT * FROM Classroom WHERE BldgName = (SELECT * FROM Travel WHERE FirstBuildingName = %s AND WalkTime <= %s)", (building_name, travel_time))  
     classrooms = cursor.fetchall()    
 
 
