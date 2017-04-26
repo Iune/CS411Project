@@ -86,7 +86,12 @@ def search():
 
 @app.route('/search_keys', methods=['POST'])
 def search_keys():
-    return "Hello World"
+    building_name = request.form['buildingNameInput']
+    travel_method = request.form['travelMethod']
+    travel_time = request.form['travelTime']
+    tags = request.form.getlist('tags')
+
+    return { 'name': building_name, 'method': travel_method, 'time': travel_time, 'tags': tags}
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
