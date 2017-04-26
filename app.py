@@ -219,7 +219,7 @@ def room(building, classname):
     num_words = 0
     for review in reviews:
         tokens = word_tokenize(review['text'])
-        tokens = [word for word in tokens if word not in ['.', ',', ';', '!', '?', '--', '...', ":", '\'s']]
+        tokens = [word for word in tokens if word not in ['.', ',', ';', '!', '?', '--', '...', ":", '\'s', '(', ')']]
         tokens = [word for word in tokens if not word.isnumeric()]
         tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words()]
 
