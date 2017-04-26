@@ -125,12 +125,18 @@ def search_keys():
                 'tags': set([tag[2]])
             }
 
+    classes_list = classes.values()
     for tag in search_tags:
-        for building in list(classes.keys()):
-            if tag in classes[building]['tags']:
+        for room in classes_list:
+            if tag in room['tags']:
                 continue
             else:
-                del classes[building]
+                del classes["{} {}".format(room['room'], room['building'])]
+
+            # if tag in classes[building]['tags']:
+            #     continue
+            # else:
+            #     del classes[building]
 
     for tag in classes.values():
         classes['tags'] = list(tag['tags'])
