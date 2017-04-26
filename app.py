@@ -213,7 +213,7 @@ def handle_review():
         cursor.execute("UPDATE Review SET Text = %s WHERE UserName = %s AND BldgName = %s AND ClassroomNumber = %s", (review_text, user_name, building, classroom))
         mysql.connection.commit()
 
-        Database.update_classroom_rating(building_name, room_number)
+        Database.update_classroom_rating(building, classroom)
         return redirect(url_for("room", building=building, classname=classroom))
         
     elif request.form['submit'] == 'delete':
