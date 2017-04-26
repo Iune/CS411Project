@@ -295,9 +295,9 @@ def room(building, classname):
         avg_rating = 0
     else:
         avg_rating = 0.5 + (float(sum(sentiments)/num_words)/1.0)
-        if avg_rating < 0.4:
+        if avg_rating < 0.3:
             avg_rating = 0
-        if avg_rating > 0.6:
+        if avg_rating > 0.7:
             avg_rating = 1
     color = Color(hue=avg_rating*0.4, saturation=1, luminance=0.3).hex
     words = [[word['word'], word['freq']] for word in words.values()]
