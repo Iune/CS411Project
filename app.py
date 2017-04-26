@@ -134,8 +134,8 @@ def search_keys():
                 continue
         classes = new_classes
 
-    for tag in classes:
-        classes['tags'] = list(tag['tags'])
+    # for tag in classes:
+    #     classes['tags'] = list(tag['tags'])
 
 
     classrooms = []
