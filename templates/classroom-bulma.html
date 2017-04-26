@@ -330,8 +330,9 @@
 <script>
 $(document).ready(function() {
 	sentiments = {{sentiments|tojson}};
+	color = {{color}}
 	WordCloud.minFontSize = "24px"
-	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: 'blue'});
+	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: color});
 });
 </script>
 {% endblock %}

@@ -4,6 +4,7 @@ from flask_mysqldb import MySQL
 from flask_login import LoginManager, UserMixin, \
                                 login_required, login_user, logout_user 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from colour import Color
 import time
 import datetime
 
@@ -211,19 +212,25 @@ def room(building, classname):
     # Get Word Sentiments for Word Cloud
     words = {}
     sid = SentimentIntensityAnalyzer()
+    sentiments = []
+    num_words = 0
     for review in reviews:
         tokens = review['text'].replace(",", "").replace(".", "").replace("!", "").split(" ")
+        num_words += tokens
         for word in tokens:
             word = word.lower()
             try:
                 words[word]['freq'] += 10
             except KeyError:
                 sentiment = sid.polarity_scores(word)['compound']
+                sentiments.append(sentiment)
                 words[word] = {'freq': 10, "word": word}
 
+    avg_rating = 0.5 + (float(sum(sentiments)/num_words)/2.0)
+    color = Color(hue=avg_rating*0.4, saturation=0.9, luminance=0.9).hex
     words = [[word['word'], word['freq']] for word in words.values()]
 
-    return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words)
+    return render_template('classroom-bulma.html', title="{} {}".format(classroom_data['roomNumber'], classroom_data['buildingName']), classroom=classroom_data, reviews=reviews, sentiments=words, color=color)
 
 if __name__ == "__main__":
     app.run(debug=True)
