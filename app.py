@@ -125,8 +125,8 @@ def search_keys():
                 'tags': set([tag[2]])
             }
 
-    for room in classes:
-        room['tags'] = list(room['tags'])
+    for classroom in classes:
+        classroom['tags'] = list(room['tags'])
 
     for tag in search_tags:
         new_classes = {}
