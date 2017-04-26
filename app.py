@@ -7,7 +7,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords
 from colour import Color
-from database import Database
+from app.database import Database
 import time
 import datetime
 import nltk
