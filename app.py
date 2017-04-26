@@ -126,13 +126,11 @@ def search_keys():
             }
 
     for tag in search_tags:
-        temp_classes = classes.copy()
         for building in classes.keys():
             if tag in classes[building]['tags']:
                 continue
             else:
-                del temp_classes[building]
-        classes = temp_classes
+                del classes[building]
 
     for tag in classes.values():
         classes['tags'] = list(tag['tags'])
