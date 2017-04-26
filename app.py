@@ -226,7 +226,10 @@ def room(building, classname):
             except KeyError:
                 words[word] = {'freq': 10, "word": word}
 
-    avg_rating = 0.5 + (float(sum(sentiments)/num_words)/1.0)
+    if num_words == 0:
+        avg_rating = 0
+    else:
+        avg_rating = 0.5 + (float(sum(sentiments)/num_words)/1.0)
     color = Color(hue=avg_rating*0.4, saturation=0.9, luminance=0.9).hex
     words = [[word['word'], word['freq']] for word in words.values()]
 
