@@ -106,7 +106,7 @@ def search_keys():
     else:
         cursor.execute("SELECT DISTINCT SecondBuildingName FROM Travel WHERE (FirstBuildingName = %s AND BikeTime <= %s)", (building_name, travel_time))  
 
-    close_buildings = [building[0] for building in cursor.fetchall()]
+    close_buildings = set([building[0] for building in cursor.fetchall()])
 
     cursor.execute("SELECT * FROM Tags")
     tags_list = cursor.fetchall()
@@ -131,14 +131,20 @@ def search_keys():
     for tag in search_tags:
         new_classes = {}
         for room in classes.keys():
-            if room['building'] in close_buildings:   
-                if tag in classes[room]['tags']:
-                    new_classes[room] = classes[room]
-                else:
-                    continue
+            if tag in classes[room]['tags']:
+                new_classes[room] = classes[room]
             else:
                 continue
         classes = new_classes
+
+    new_classes = {}
+    for room in classes.keys():
+        if classes['building'] in close_buildings:
+            new_classes[room] = classes[room]
+        else:
+            continue
+    classes = new_classes
+
     classes = list(classes.values())
     return render_template('search.html', title="Search", rooms=classes)
 
