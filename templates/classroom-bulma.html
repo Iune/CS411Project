@@ -327,32 +327,10 @@
 	{% endfor %}
 </section>
 <br/>
-<input type="hidden" id="sentiments" value="{{sentiments|tojson}}">
 <script>
 $(document).ready(function() {
 	sentiments = {{sentiments|tojson}};
-	console.log(sentiments);
-	// console.log(Array.from(sentiments));
-	// console.log(sentiments);
-
-	// newList = [];
-	// for(var i = 0; i < sentiments.length; i++) {
-	// 	console.log([list[i][0], list[i][1]]);
-	// 	newList.push([list[i][0], list[i][1]]);
-	// }
-
-	// console.log(newList);
-
-	sentiments = [['recommend', 10], ['to', 20], ['know!', 10], ['again', 10], ['place', 30], ['everyone', 10], ['is', 10], ['would', 10], ['ever', 10], ['best', 10], ['believe', 10], ['placeholder', 10], ['been', 10], ['have', 10], ['it', 10], ["can't", 10], ['the', 10], ['i', 40], ['highly', 10], ['exists!', 10], ['this', 20]];
-	console.log(sentiments);
-
-	// wordList = [];
-	// for (var i in list.length) {
-	//   wordList.push([list[i]["word"], list[i]["freq"]]);
-	// }
-	// console.log(wordList);
-
-	WordCloud.minFontSize = "15px"
+	WordCloud.minFontSize = "24px"
 	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: 'blue'});
 });
 </script>
