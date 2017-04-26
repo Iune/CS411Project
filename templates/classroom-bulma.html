@@ -332,8 +332,8 @@ $(document).ready(function() {
 	sentiments = {{sentiments|tojson}};
 	color = "{{color}}";
 	// console.log(color)
-	// WordCloud.minFontSize = "24px"
-	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: color, backgroundColor: "black"});
+	// WordCloud.minFontSize = "30px"
+	WordCloud(document.getElementById('word_cloud'), { list: sentiments, color: color, backgroundColor: "black", minSize: "20px"});
 });
 </script>
 {% endblock %}
