@@ -122,7 +122,7 @@ def search_keys():
             tags["{} {}".format(room, building)] = {
                 'building': building,
                 'room': room,
-                'tags': [tag[2]]
+                'tags': set(tag[2])
             }
 
     classrooms = []
