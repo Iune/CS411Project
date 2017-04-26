@@ -103,9 +103,9 @@ def search_keys():
 
     classrooms = []
     for building in close_buildings:
-        cursor.execute("SELECT * FROM Classroom WHERE BldgName = %s", (building,))  
+        cursor.execute("SELECT RoomNumber FROM Classroom WHERE BldgName = %s", (building,))  
         building_rooms = cursor.fetchall() 
-        classrooms += [building for building in building_rooms]   
+        classrooms += [{'building': building, 'room', room} for room in building_rooms]   
 
 
     return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=close_buildings, classrooms=classrooms)
