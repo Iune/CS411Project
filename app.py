@@ -4,6 +4,8 @@ from flask_mysqldb import MySQL
 from flask_login import LoginManager, UserMixin, \
                                 login_required, login_user, logout_user 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
 from colour import Color
 import time
 import datetime
@@ -215,7 +217,12 @@ def room(building, classname):
     sentiments = []
     num_words = 0
     for review in reviews:
-        tokens = review['text'].replace(",", "").replace(".", "").replace("!", "").split(" ")
+        tokens = word_tokenize(review['text'])
+        tokens = [word for word in tokens if word not in ['.', ',', ';', '!', '?', '--', '...', ":", '\'s']]
+        tokens = [word for word in tokens if not word.isnumeric()]
+        tokens = [word for word in tokens if word not in nltk.corpus.stopwords.words()]
+
+        # review['text'].replace(",", "").replace(".", "").replace("!", "").split(" ")
         num_words += len(tokens)
         for word in tokens:
             word = word.lower()
