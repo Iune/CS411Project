@@ -139,7 +139,7 @@ def search_keys():
 
     new_classes = {}
     for room in classes.keys():
-        if room['building'] in close_buildings:
+        if classes['room']['building'] in close_buildings:
             new_classes[room] = classes[room]
         else:
             continue
