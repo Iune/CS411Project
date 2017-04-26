@@ -125,7 +125,7 @@ def search_keys():
                 'tags': set(tag[2])
             }
 
-    for tag in tags_list.values():
+    for tag in tags.values():
         tag['tags'] = list(tag['tags'])
 
     classrooms = []
