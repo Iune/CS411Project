@@ -99,7 +99,7 @@ def search_keys():
         travel_times[time[1]] = {'building': time[1], 'walk': time[2], 'bike': time[3]}
 
 
-    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=travel_times)
+    return jsonify(name=building_name, method=travel_method, time=travel_time, tags=tags, distances=travel_times_temp)
 
 @app.route('/sign_up', methods=['GET'])
 def sign_up():
