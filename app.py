@@ -162,13 +162,14 @@ def add_review():
     mysql.connection.commit()
 
     for tag in tags:
-        cursor.execute("INSERT INTO TagsInReview (DateTime, Username, TagName) VALUES (%s, %s, %s)", (timestamp, user_name, tag))
+        cursor.execute("INSERT INTO Tags (DateTime, Username, TagName, BldgName, RoomNumber) VALUES (%s, %s, %s)", (timestamp, user_name, tag, building_name, room_number))
         mysql.connection.commit()
 
     # Update Average Classroom Rating
     cursor.execute("SELECT AVG(Rating) FROM Review WHERE BldgName = %s AND ClassroomNumber = %s", (building_name, room_number))
     average_rating = cursor.fetchall()[0][0]
     cursor.execute("UPDATE Classroom SET AverageRating = %s WHERE BldgName = %s AND RoomNumber = %s", (average_rating, building_name, room_number))
+    mysql.connection.commit()
 
     return redirect(url_for('room', building=building_name, classname=room_number))
 
@@ -222,7 +223,7 @@ def room(building, classname):
     reviews = []
     for review in reviews_list:
         tags = []
-        cursor.execute("SELECT TagName FROM TagsInReview WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
+        cursor.execute("SELECT TagName FROM Tags WHERE UserName = %s AND DateTime = %s", (review[3], review[1])) 
         tags_list = cursor.fetchall()
         tags_list = [tag[0] for tag in tags_list]
         reviews.append({
